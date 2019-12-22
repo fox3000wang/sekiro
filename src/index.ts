@@ -4,12 +4,15 @@ import routes from "./router/router";
 import store from "./store/";
 import "./config/rem";
 
-Vue.use(VueRouter);
-const router = new VueRouter({
-  routes
-});
+// Vue.use(VueRouter);
+// const router = new VueRouter({
+//   routes
+// });
+
+console.log("I'm here!");
 
 new Vue({
-  router,
-  store
+  data: {
+    message: "hello vue"
+  }
 }).$mount("#app");

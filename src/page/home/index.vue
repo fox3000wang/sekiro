@@ -5,9 +5,13 @@
 </template>
 
 <script>
+// import itemcontainer from "../../components/itemcontainer";
+
 export default {
   name: "home",
-  components: {},
+  components: {
+    itemcontainer
+  },
   created() {}
 };
 </script>

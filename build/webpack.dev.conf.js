@@ -2,7 +2,7 @@
 const path = require("path");
 const utils = require("./utils");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   context: path.resolve(__dirname, "../"),
@@ -36,6 +36,24 @@ module.exports = {
         }]
       },
       {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 1000000,
+          name: utils.assetsPath('img/[name].[hash:7].[ext]'),
+        },
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: "babel-loader",
+          options: {
+            babelrc: true
+          }
+        }]
+      },
+      {
         test: /\.ts$/,
         exclude: /node_modules/,
         use: [{
@@ -54,15 +72,4 @@ module.exports = {
       }
     ]
   }
-  // ,
-  // vue: {
-  //   loaders: utils.cssLoaders({
-  //     sourceMap: true,
-  //   }),
-  //   postcss: [
-  //     require('autoprefixer')({
-  //       browsers: ['last 10 versions']
-  //     })
-  //   ]
-  // }
 };
