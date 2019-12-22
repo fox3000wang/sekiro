@@ -1,17 +1,15 @@
-console.log("hellp");
+import Vue from "vue";
+import VueRouter from "vue-router";
+import routes from "./router/router";
+import store from "./store/";
+import "./config/rem";
 
-[
-  "drop",
-  "dragover",
-  "drag",
-  "dragstart",
-  "dragend",
-  "dragover",
-  "dragenter",
-  "dragleave"
-].forEach(item => {
-  document.addEventListener(item, function(e: any) {
-    e.preventDefault();
-    e.stopPropagation();
-  });
+Vue.use(VueRouter);
+const router = new VueRouter({
+  routes
 });
+
+new Vue({
+  router,
+  store
+}).$mount("#app");

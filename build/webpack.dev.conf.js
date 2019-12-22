@@ -1,6 +1,8 @@
 "use strict";
 const path = require("path");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const utils = require("./utils");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   context: path.resolve(__dirname, "../"),
@@ -15,8 +17,7 @@ module.exports = {
   // eval-source-map is faster for development
   devtool: "#eval-source-map",
   plugins: [
-
-
+    new VueLoaderPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: "index.html",
@@ -25,25 +26,43 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: [".ts", ".js", ".json"]
+    extensions: [".vue", ".ts", ".js", ".json"]
   },
   module: {
     rules: [{
-      test: /\.ts$/,
-      exclude: /node_modules/,
-      use: [{
-          loader: "babel-loader",
-          options: {
-            babelrc: true
+        test: /\.vue$/,
+        use: [{
+          loader: "vue-loader"
+        }]
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: [{
+            loader: "babel-loader",
+            options: {
+              babelrc: true
+            }
+          },
+          {
+            loader: "ts-loader",
+            options: {
+              transpileOnly: true
+            }
           }
-        },
-        {
-          loader: "ts-loader",
-          options: {
-            transpileOnly: true
-          }
-        }
-      ]
-    }]
+        ]
+      }
+    ]
   }
+  // ,
+  // vue: {
+  //   loaders: utils.cssLoaders({
+  //     sourceMap: true,
+  //   }),
+  //   postcss: [
+  //     require('autoprefixer')({
+  //       browsers: ['last 10 versions']
+  //     })
+  //   ]
+  // }
 };

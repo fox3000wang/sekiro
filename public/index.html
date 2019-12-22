@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" style="font-size: calc(100vh / 10.8)">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <title>React App</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>App</title>
     <style>
       #qimo_chatpup {
         position: fixed !important;
         left: 20px !important;
         bottom: 20px !important;
       }
+
       #launcher {
         margin: 0.2rem !important;
       }
+
       @keyframes dice {
         from {
           background-position: 0px;
@@ -25,32 +30,15 @@
       }
     </style>
     <script type="text/javascript">
-      window.alert = function(){}
+      window.alert = function() {};
     </script>
   </head>
+
   <body>
-    <script>
-      // let DEPLOY_ENV =require('electron').remote.getGlobal('DEPLOY_ENV');
-      // const DEPLOY_EVN = 'dev';
-      switch ('beta') {
-        case 'production':
-          !(function(c,b,d,a){c[a]||(c[a]={});c[a].config={pid:"g7lzrmmvnq@dfc0d8ceac29012",imgUrl:"https://arms-retcode.aliyuncs.com/r.png?"};
-          with(b)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("crossorigin","",src=d)
-          })(window,document,"https://retcode.alicdn.com/retcode/bl.js","__bl");
-          break;
-        case 'beta':
-        case 'dev':
-          !(function(c,b,d,a){c[a]||(c[a]={});c[a].config={pid:"g7lzrmmvnq@c7eee87e6545c4c",imgUrl:"https://arms-retcode.aliyuncs.com/r.png?"};
-          with(b)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("crossorigin","",src=d)
-          })(window,document,"https://retcode.alicdn.com/retcode/bl.js","__bl");
-          break;
-        default:
-          // console.log('unknown deploy_env',DEPLOY_ENV);
-      }
-    </script>
+    <script></script>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root" style="height: 100%; width: 100%"></div>
+    <div id="app" style="height: 100%; width: 100%"></div>
   </body>
 </html>

@@ -3,7 +3,9 @@ var path = require('path')
 
 module.exports = {
     build: {
-        env: {NODE_ENV: '"production"'},
+        env: {
+            NODE_ENV: '"production"'
+        },
         index: path.resolve(__dirname, '../happyfri/index.html'),
         assetsRoot: path.resolve(__dirname, '../happyfri'),
         assetsSubDirectory: 'static',
@@ -17,8 +19,10 @@ module.exports = {
         productionGzipExtensions: ['js', 'css']
     },
     dev: {
-        env: {NODE_ENV: '"development"'},
-        port: 8088,
+        env: {
+            NODE_ENV: '"development"'
+        },
+        port: 8888,
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         context: [ //代理路径
