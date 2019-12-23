@@ -1,8 +1,6 @@
 import * as React from "react";
 import { Switch, Route } from "react-router";
-
-import MockPage from "./MockPage/MockPage";
-import I18nPage from "./i18n";
+import DicomPage from "./DicomPage";
 
 class App extends React.Component<any, any> {
   static displayName = "App";
@@ -16,8 +14,7 @@ class App extends React.Component<any, any> {
         }}
       >
         <Switch>
-          <Route path="/" component={MockPage} />
-          <Route path="/i18n" component={I18nPage} />
+          <Route path="/" component={DicomPage} />
         </Switch>
       </div>
     );
