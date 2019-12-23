@@ -2,7 +2,9 @@
   "name": "sekiro",
   "version": "0.1.0",
   "description": "",
+  "private": true,
   "main": "src/index.js",
+  "license": "ISC",
   "scripts": {
     "d": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --progress --host 0.0.0.0 --inline --hot --config ./build/webpack.dev.conf.js",
     "b": ""
@@ -12,8 +14,7 @@
     "url": "git+https://github.com/fox3000wang/sekiro.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "fox1000wang@gmail.com",
   "bugs": {
     "url": "https://github.com/fox3000wang/sekiro/issues"
   },

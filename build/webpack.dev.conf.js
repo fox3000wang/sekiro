@@ -36,12 +36,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     compress: true,
     host: process.env.HOST || config.dev.host,
     port: process.env.PORT || config.dev.port,
-    overlay: config.dev.errorOverlay ?
-      {
-        warnings: false,
-        errors: true,
-      } :
-      false,
+    overlay: config.dev.errorOverlay ? {
+      warnings: false,
+      errors: true,
+    } : false,
     publicPath: config.dev.assetsPublicPath,
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorsPlugin
@@ -104,7 +102,6 @@ module.exports = new Promise((resolve, reject) => {
           onErrors: config.dev.notifyOnErrors ? utils.createNotifierCallback() : undefined,
         })
       );
-
       resolve(devWebpackConfig);
     }
   });

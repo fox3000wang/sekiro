@@ -1,0 +1,3 @@
+export const APP_READY = "APP_READY";
+
+export const INIT_ROOMID_AND_LESSONID = "INIT_ROOMID_AND_LESSONID";
