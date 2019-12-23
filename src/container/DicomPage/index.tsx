@@ -1,8 +1,18 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { IAppActionProps, mapAppActions } from "../../action";
 
-import { Background, Layout, Head, Body, Left, Center, Right } from "./style";
+import { IAppActionProps, mapAppActions } from "../../action";
+import {
+  Background,
+  Layout,
+  Head,
+  Body,
+  Left,
+  Center,
+  Line,
+  Button,
+  Icon
+} from "./style";
 
 function mapStateToProps() {
   return {};
@@ -21,22 +31,15 @@ class DicomPage extends React.Component<IAppActionProps, any> {
       <Background>
         <Layout>
           <Head>
-            <div>我是工具栏</div>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
-            <button>hello</button>
+            <Button>放大</Button>
+            <Button>层级</Button>
+            <Button>移动</Button>
+            <Button>长度</Button>
+            <Button>角度</Button>
+            <Button>测量</Button>
+            <Button>复原</Button>
           </Head>
+          <Line></Line>
           <Body>
             <Left>
               <div>我是侧边栏</div>
@@ -44,9 +47,6 @@ class DicomPage extends React.Component<IAppActionProps, any> {
             <Center>
               <div>照片区</div>
             </Center>
-            <Right>
-              <div>右侧边栏</div>
-            </Right>
           </Body>
         </Layout>
       </Background>
