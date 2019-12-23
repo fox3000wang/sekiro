@@ -1,0 +1,76 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+@keyframes :global(rotate-preview) {
+  0% {
+    transform: rotate3d(0, 0, 0, 90deg);
+  }
+  50% {
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, 90deg);
+  }
+}
+
+/*div::-webkit-scrollbar {*/
+
+/*background: transparent;*/
+
+/*width: 10px;*/
+
+/*}*/
+
+/*div:hover::-webkit-scrollbar {*/
+
+/*background: #CCC;*/
+
+/*width: 10px;*/
+
+/*}*/
+
+/*div::-webkit-scrollbar:hover {*/
+
+/*background: #CCC;*/
+
+/*}*/
+
+/*div::-webkit-scrollbar-track:hover {*/
+
+/*background: #CCC;*/
+
+/*border-radius: 10px;*/
+
+/*}*/
+
+/*div::-webkit-scrollbar-thumb {*/
+
+/*width: 9px;*/
+
+/*border-radius: 8px;*/
+
+/*background: gray;*/
+
+/*}*/
