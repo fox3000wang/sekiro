@@ -6,10 +6,10 @@ import "./index.css";
 reducePromise(tasks, {}).then((context: any) => {
   const {
     actions: {
-      common: { setConfig }
+      common: { setIsReady }
     }
   } = context;
-  setConfig(context.env);
+  setIsReady(true);
 });
 
 [
