@@ -8,6 +8,7 @@ export const ExperimentsContext = React.createContext("Experiments"); // must be
 import App from "../container/App";
 
 function renderApp(store: any, history: any, exp: any) {
+  // eslint-disable-next-line
   return ReactDOM.render(
     <AppContainer>
       <ExperimentsContext.Provider value={exp}>
