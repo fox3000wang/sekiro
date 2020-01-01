@@ -20,4 +20,6 @@ yarn-error.log*
 *.sln
 *.sw?
 
+*.js.map
+
 package-lock.json
