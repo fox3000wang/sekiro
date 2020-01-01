@@ -1,7 +1,7 @@
 import "react-hot-loader/patch";
 
 import * as _ from "lodash";
-import { bindActionCreators, AnyAction, Dispatch } from "redux";
+import { bindActionCreators, Dispatch } from "redux";
 import * as common from "./common";
 
 const actionList = {
