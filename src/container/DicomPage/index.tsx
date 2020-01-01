@@ -10,8 +10,7 @@ import {
   Left,
   Center,
   Line,
-  Button,
-  Icon
+  Button
 } from "./style";
 
 function mapStateToProps() {

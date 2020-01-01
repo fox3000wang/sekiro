@@ -22,7 +22,9 @@ module.exports = {
     "@typescript-eslint/prefer-interface": ["warn"], //优先使用 interface 而不是 type 定义类型
     "@typescript-eslint/camelcase": ["warn"], // 运行匈牙利命名法 fixme
     "@typescript-eslint/no-triple-slash-reference": ["warn"], // 允许/// <reference path="" />
-    "@typescript-eslint/no-parameter-properties": ["warn"]
+    "@typescript-eslint/no-parameter-properties": ["warn"],
+    "@typescript-eslint/no-explicit-any": [0],
+
   },
   settings: {
     react: {

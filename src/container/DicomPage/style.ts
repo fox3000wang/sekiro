@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as suo_fang from "../../assets/icons/suo_fang.png";
+import * as suoFang from "../../assets/icons/suo_fang.png";
 
 export const Background = styled.div`
   background: #000;
@@ -47,7 +47,7 @@ export const Center = styled.div`
 `;
 
 export const Button = styled.div`
-  background: url(${suo_fang}) 0.2rem 0.2rem/0.4rem 0.4rem no-repeat;
+  background: url(${suoFang}) 0.2rem 0.2rem/0.4rem 0.4rem no-repeat;
   padding: 0.7rem 0 0.05rem 0;
   font-size: 0.16rem;
   text-align: center;
