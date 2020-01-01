@@ -8,13 +8,12 @@ const baseWebpackConfig = require('./webpack.base.conf');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const env =
-  process.env.NODE_ENV === 'testing'
-    ? require('../config/test.env')
-    : require('../config/prod.env');
+  process.env.NODE_ENV === 'testing' ?
+  require('../config/test.env') :
+  require('../config/prod.env');
 const envVariables = utils.parseEnvVariables(env);
 
 let webpackConfig = merge(baseWebpackConfig, {
@@ -59,9 +58,14 @@ let webpackConfig = merge(baseWebpackConfig, {
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
-      cssProcessorOptions: config.build.productionSourceMap
-        ? { safe: true, map: { inline: false } }
-        : { safe: true },
+      cssProcessorOptions: config.build.productionSourceMap ? {
+        safe: true,
+        map: {
+          inline: false
+        }
+      } : {
+        safe: true
+      },
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
@@ -86,13 +90,12 @@ let webpackConfig = merge(baseWebpackConfig, {
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*'],
-      },
-    ]),
+    // 不copy
+    // new CopyWebpackPlugin([{
+    //   from: path.resolve(__dirname, '../static'),
+    //   to: config.build.assetsSubDirectory,
+    //   ignore: ['.*'],
+    // }, ]),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       pngquant: {
