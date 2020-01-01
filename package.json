@@ -111,8 +111,6 @@
     "@types/archiver": "^2.1.2",
     "@types/qs": "^6.5.1",
     "@types/react-lottie": "^1.2.2",
-    "@types/storybook__addon-info": "^3.4.2",
-    "@types/storybook__react": "^4.0.0",
     "@types/uuid": "^3.4.4",
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "@typescript-eslint/parser": "^1.4.2",
