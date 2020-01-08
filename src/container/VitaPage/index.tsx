@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { IAppActionProps, mapAppActions } from "../../action";
 import { Background, Layout, Head, Body, Left, Center, Line } from "./style";
 import { Title, SubTitle, Cube, Circle, Triangle } from "./style";
+import { Label, Text } from "./style";
 
 function mapStateToProps() {
   return {};
@@ -31,7 +32,14 @@ class DicomPage extends React.Component<IAppActionProps, any> {
           <Line></Line>
           <Body>
             <Left>
-              <div>我是侧边栏</div>
+              <Label>性别</Label>
+              <Text>男</Text>
+              <Label>年龄</Label>
+              <Text>39岁</Text>
+              <Label>工作地点</Label>
+              <Text>上海浦东</Text>
+              <Label>工龄</Label>
+              <Text>14年</Text>
             </Left>
             <Center>
               <div>照片区</div>

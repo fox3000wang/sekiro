@@ -4,18 +4,17 @@ export const Background = styled.div`
   background: #fff;
   display: flex;
   font-family: PingFangSC-Semibold;
-  font-size: 0.2rem;
+  font-size: 0.18rem;
   height: 100%;
 `;
 
 export const Layout = styled.div`
   width: 100%;
   height: 100%;
-  /* margin: 0.05rem; */
 `;
 
 export const Head = styled.div`
-  background: #222;
+  background: #000;
   display: flex;
   align-items: center;
   height: 1.5rem;
@@ -71,20 +70,37 @@ export const Line = styled.div`
 
 export const Body = styled.div`
   display: flex;
-  flex-direction: row;
   margin: 0;
-  height: 100%;
+  justify-content: space-between;
 `;
 
 export const Left = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background: #000;
+`;
+
+export const Photo = styled.div`
   margin-left: 0;
-  height: 100%;
-  width: 6rem;
+  width: 20%;
+  background: #000;
+`;
+
+export const Label = styled.div`
+  color: #aaa;
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
+`;
+export const Text = styled.div`
+  color: #fff;
+  margin-left: 0.2rem;
+  margin-top: 0.05rem;
 `;
 
 export const Center = styled.div`
-  background: #00a;
-  width: 100%;
-  height: 100%;
-  border: 0.01rem solid #0a0;
+  display: flex;
+  flex-direction: column;
+  background: #aaa;
+  width: 79%;
 `;
