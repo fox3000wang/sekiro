@@ -101,6 +101,49 @@ export const Text = styled.div`
 export const Center = styled.div`
   display: flex;
   flex-direction: column;
-  background: #aaa;
+  /* background: #bbb; */
   width: 79%;
+`;
+
+export const Partition = styled.div`
+  height: 0.2rem;
+  width: 100%;
+`;
+
+export const Headline = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const TheHead = styled.div`
+  color: #000;
+  font-size: 0.32rem;
+  text-align: center;
+  white-space: nowrap;
+`;
+
+export const Theline = styled.div`
+  background-color: #000;
+  height: 1px;
+  width: 100%;
+  margin-left: 0.05rem;
+`;
+
+export const Item = styled.div`
+  display: flex;
+`;
+
+export const Clabel = styled.div`
+  color: #888;
+`;
+export const CText = styled.div`
+  color: #000;
+  /* margin-left: 0.2rem; */
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
 `;
