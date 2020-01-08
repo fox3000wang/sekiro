@@ -6,6 +6,7 @@ export const Background = styled.div`
   font-family: PingFangSC-Semibold;
   font-size: 0.18rem;
   height: 100%;
+  overflow-y: auto;
 `;
 
 export const Layout = styled.div`
@@ -135,10 +136,17 @@ export const Item = styled.div`
 
 export const Clabel = styled.div`
   color: #888;
+  margin-top: 0.04rem;
 `;
-export const CText = styled.div`
+export const CText = styled.text`
+  text-align: left;
   color: #000;
-  /* margin-left: 0.2rem; */
+  margin-top: 0.02rem;
+`;
+export const CTextarea = styled.div`
+  text-align: left;
+  color: #000;
+  white-space: pre-wrap;
 `;
 
 export const Content = styled.div`
