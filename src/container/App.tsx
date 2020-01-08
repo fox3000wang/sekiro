@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Switch, Route } from "react-router";
 import DicomPage from "./DicomPage";
+import VitaPage from "./VitaPage";
 
 class App extends React.Component<any, any> {
   static displayName = "App";
@@ -14,7 +15,8 @@ class App extends React.Component<any, any> {
         }}
       >
         <Switch>
-          <Route path="/" component={DicomPage} />
+          <Route path="/" component={VitaPage} />
+          <Route path="/Dicom" component={DicomPage} />
         </Switch>
       </div>
     );
