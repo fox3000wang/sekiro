@@ -34,6 +34,14 @@ import {
 } from "./style";
 
 import * as react from "../../assets/vita/react.png";
+import * as css from "../../assets/vita/css3.png";
+import * as webpack from "../../assets/vita/webpack.png";
+import * as npm from "../../assets/vita/npm.png";
+
+import * as jenkins from "../../assets/vita/jenkins.png";
+import * as gitlabci from "../../assets/vita/gitlab-ci.png";
+import * as shell from "../../assets/vita/shell.png";
+import * as ubuntu from "../../assets/vita/ubuntu.png";
 
 function mapStateToProps() {
   return {};
@@ -81,8 +89,37 @@ class VitaPage extends React.Component<IAppActionProps, any> {
                     <Item>
                       <Icon bg={react}>react</Icon>
                       <Progress>
-                        <Bar width={0.5 * 100} />
+                        <Bar width={0.8 * 100} />
                       </Progress>
+                    </Item>
+                    <Item>
+                      <Icon bg={css}>css3</Icon>
+                      <Progress>
+                        <Bar width={0.8 * 100} />
+                      </Progress>
+                    </Item>
+                    <Item>
+                      <Icon bg={webpack}>webpack</Icon>
+                      <Progress>
+                        <Bar width={0.7 * 100} />
+                      </Progress>
+                    </Item>
+                  </Content>
+                </SubModule>
+              </Module>
+              <Module>
+                <Headline>
+                  <TheHead>附属技能</TheHead>
+                  <Theline></Theline>
+                </Headline>
+                <SubModule>
+                  <Content>
+                    <Text>自动化集成</Text>
+                    <Item>
+                      <Icon bg={jenkins}>jenkins</Icon>
+                      <Icon bg={gitlabci}>gitlab-ci</Icon>
+                      <Icon bg={shell}>shell</Icon>
+                      <Icon bg={ubuntu}>ubuntu</Icon>
                     </Item>
                   </Content>
                 </SubModule>

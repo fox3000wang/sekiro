@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Icon = styled.div<{ bg: any }>`
-  background: url(${props => props.bg}) left top/100% 100% no-repeat;
-  width: 0.4rem;
-  height: 0.4rem;
+  background: url(${props => props.bg}) center top/0.4rem 0.4rem no-repeat;
+  width: 0.8rem;
+  height: 0.6rem;
   padding: 0.4rem 0 0 0;
   line-height: 0.18rem;
   text-align: center;
