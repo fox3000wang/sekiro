@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-import * as react from "../../assets/vita/react.png";
-
-export const Icon = styled.div`
-  background: url(${react}) left top/100% 100% no-repeat;
+export const Icon = styled.div<{ bg: any }>`
+  background: url(${props => props.bg}) left top/100% 100% no-repeat;
   width: 0.4rem;
   height: 0.4rem;
   padding: 0.4rem 0 0 0;

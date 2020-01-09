@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 
 import { IAppActionProps, mapAppActions } from "../../action";
+import { info } from "./data";
 import {
   Background,
   Layout,
@@ -32,9 +33,7 @@ import {
   Icon
 } from "./style";
 
-import { info } from "./data";
-import react from "../../assets/vita/react.png";
-import { Test } from "tslint";
+import * as react from "../../assets/vita/react.png";
 
 function mapStateToProps() {
   return {};
@@ -80,7 +79,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
                 <SubModule>
                   <Content>
                     <Item>
-                      <Icon>react</Icon>
+                      <Icon bg={react}>react</Icon>
                       <Progress>
                         <Bar width={0.5 * 100} />
                       </Progress>
