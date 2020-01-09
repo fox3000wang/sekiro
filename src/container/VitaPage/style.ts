@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+import * as react from "../../assets/vita/react.png";
+
+export const Icon = styled.div`
+  background: url(${react}) left top/100% 100% no-repeat;
+  width: 0.4rem;
+  height: 0.4rem;
+  padding: 0.4rem 0 0 0;
+  line-height: 0.18rem;
+  text-align: center;
+`;
+
 export const Background = styled.div`
   background: #fff;
   display: flex;
@@ -135,6 +146,8 @@ export const Theline = styled.div`
 
 export const Item = styled.div`
   display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 `;
 
 export const Label = styled.div`
@@ -165,7 +178,8 @@ export const Progress = styled.div`
   background-repeat: repeat-x;
   box-shadow: inset 0 0.01rem 0.04rem rgba(0, 0, 0, 0.1);
   border-radius: 0.08rem;
-  height: 0.04rem;
+  height: 0.1rem;
+  width: 2rem;
   margin-left: 0.04rem;
   margin-top: 0.04rem;
 `;

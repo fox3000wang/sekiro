@@ -28,10 +28,13 @@ import {
   Module,
   SubModule,
   Progress,
-  Bar
+  Bar,
+  Icon
 } from "./style";
 
 import { info } from "./data";
+import react from "../../assets/vita/react.png";
+import { Test } from "tslint";
 
 function mapStateToProps() {
   return {};
@@ -69,6 +72,22 @@ class VitaPage extends React.Component<IAppActionProps, any> {
               ))}
             </Left>
             <Center>
+              <Module>
+                <Headline>
+                  <TheHead>专业技能</TheHead>
+                  <Theline></Theline>
+                </Headline>
+                <SubModule>
+                  <Content>
+                    <Item>
+                      <Icon>react</Icon>
+                      <Progress>
+                        <Bar width={0.5 * 100} />
+                      </Progress>
+                    </Item>
+                  </Content>
+                </SubModule>
+              </Module>
               <Module>
                 <Headline>
                   <TheHead>求职意向</TheHead>
@@ -130,20 +149,6 @@ class VitaPage extends React.Component<IAppActionProps, any> {
                     </Content>
                   </SubModule>
                 ))}
-              </Module>
-              <Module>
-                <Headline>
-                  <TheHead>专业技能</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                <SubModule>
-                  <Item>
-                    <Label></Label>
-                    <Progress>
-                      <Bar width={1 * 100} />
-                    </Progress>
-                  </Item>
-                </SubModule>
               </Module>
             </Center>
           </Body>
