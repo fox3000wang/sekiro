@@ -22,13 +22,13 @@ export const Head = styled.div`
   margin: 0;
 `;
 
-export const Title = styled.div`
-  font-size: 0.35rem;
+export const Title = styled.h1`
+  /* font-size: 0.35rem; */
   color: #fff;
   margin-left: 0.2rem;
 `;
-export const SubTitle = styled.div`
-  font-size: 0.2rem;
+export const SubTitle = styled.h3`
+  /* font-size: 0.2rem; */
   color: #fff;
   margin-left: 0.1rem;
 `;
@@ -88,12 +88,12 @@ export const Photo = styled.div`
   background: #000;
 `;
 
-export const Label = styled.div`
+export const LabelLeft = styled.div`
   color: #aaa;
   margin-left: 0.2rem;
   margin-top: 0.2rem;
 `;
-export const Text = styled.div`
+export const TextLeft = styled.div`
   color: #fff;
   margin-left: 0.2rem;
   margin-top: 0.05rem;
@@ -109,6 +109,15 @@ export const Center = styled.div`
 export const Partition = styled.div`
   height: 0.2rem;
   width: 100%;
+`;
+
+export const Module = styled.div`
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+`;
+export const SubModule = styled.div`
+  margin-top: 0.05rem;
+  margin-bottom: 0.05rem;
 `;
 
 export const Headline = styled.div`
