@@ -10,7 +10,6 @@ import {
   Body,
   Left,
   Center,
-  Line,
   Title,
   SubTitle,
   Cube,
@@ -30,18 +29,24 @@ import {
   SubModule,
   Progress,
   Bar,
-  Icon
+  Icon,
+  Photo
 } from "./style";
 
+import * as es6 from "../../assets/vita/es6.png";
 import * as react from "../../assets/vita/react.png";
+import * as redux from "../../assets/vita/redux.png";
+import * as styled from "../../assets/vita/styled-components.png";
 import * as css from "../../assets/vita/css3.png";
 import * as webpack from "../../assets/vita/webpack.png";
 import * as npm from "../../assets/vita/npm.png";
-
 import * as jenkins from "../../assets/vita/jenkins.png";
 import * as gitlabci from "../../assets/vita/gitlab-ci.png";
 import * as shell from "../../assets/vita/shell.png";
 import * as ubuntu from "../../assets/vita/ubuntu.png";
+import * as docker from "../../assets/vita/docker.png";
+import * as python from "../../assets/vita/python.png";
+import * as ts from "../../assets/vita/ts.png";
 
 function mapStateToProps() {
   return {};
@@ -68,7 +73,6 @@ class VitaPage extends React.Component<IAppActionProps, any> {
             <Circle></Circle>
             <Triangle></Triangle>
           </Head>
-          <Line></Line>
           <Body>
             <Left>
               {Object.keys(sub).map((obj, idx) => (
@@ -79,51 +83,6 @@ class VitaPage extends React.Component<IAppActionProps, any> {
               ))}
             </Left>
             <Center>
-              <Module>
-                <Headline>
-                  <TheHead>专业技能</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                <SubModule>
-                  <Content>
-                    <Item>
-                      <Icon bg={react}>react</Icon>
-                      <Progress>
-                        <Bar width={0.8 * 100} />
-                      </Progress>
-                    </Item>
-                    <Item>
-                      <Icon bg={css}>css3</Icon>
-                      <Progress>
-                        <Bar width={0.8 * 100} />
-                      </Progress>
-                    </Item>
-                    <Item>
-                      <Icon bg={webpack}>webpack</Icon>
-                      <Progress>
-                        <Bar width={0.7 * 100} />
-                      </Progress>
-                    </Item>
-                  </Content>
-                </SubModule>
-              </Module>
-              <Module>
-                <Headline>
-                  <TheHead>附属技能</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                <SubModule>
-                  <Content>
-                    <Text>自动化集成</Text>
-                    <Item>
-                      <Icon bg={jenkins}>jenkins</Icon>
-                      <Icon bg={gitlabci}>gitlab-ci</Icon>
-                      <Icon bg={shell}>shell</Icon>
-                      <Icon bg={ubuntu}>ubuntu</Icon>
-                    </Item>
-                  </Content>
-                </SubModule>
-              </Module>
               <Module>
                 <Headline>
                   <TheHead>求职意向</TheHead>
@@ -185,6 +144,128 @@ class VitaPage extends React.Component<IAppActionProps, any> {
                     </Content>
                   </SubModule>
                 ))}
+              </Module>
+              <Module>
+                <Headline>
+                  <TheHead>专业技能</TheHead>
+                  <Theline></Theline>
+                </Headline>
+                <SubModule>
+                  <Content>
+                    <Item>
+                      <Icon bg={es6}>es6</Icon>
+                      <Progress>
+                        <Bar width={75} />
+                      </Progress>
+                    </Item>
+                    <Item>
+                      <Icon bg={webpack}>webpack</Icon>
+                      <Progress>
+                        <Bar width={75} />
+                      </Progress>
+                    </Item>
+                    <Item>
+                      <Icon bg={react}>react</Icon>
+                      <Progress>
+                        <Bar width={85} />
+                      </Progress>
+                    </Item>
+                    <Item>
+                      <Icon bg={redux}>redux</Icon>
+                      <Progress>
+                        <Bar width={70} />
+                      </Progress>
+                    </Item>
+                    <Item>
+                      <Icon bg={css}>css3</Icon>
+                      <Progress>
+                        <Bar width={85} />
+                      </Progress>
+                    </Item>
+                    <Item>
+                      <Icon bg={styled}>styled-components</Icon>
+                      <Progress>
+                        <Bar width={82} />
+                      </Progress>
+                    </Item>
+                  </Content>
+                </SubModule>
+              </Module>
+              <Module>
+                <Headline>
+                  <TheHead>附属技能</TheHead>
+                  <Theline></Theline>
+                </Headline>
+                <SubModule>
+                  <Content>
+                    <Label>自动化集成</Label>
+                    <Item>
+                      <Icon bg={npm}>npm</Icon>
+                      <Icon bg={gitlabci}>gitlab-ci</Icon>
+                      <Icon bg={jenkins}>jenkins</Icon>
+                    </Item>
+                  </Content>
+                </SubModule>
+                <SubModule>
+                  <Content>
+                    <Label>服务器</Label>
+                    <Item>
+                      <Icon bg={shell}>shell</Icon>
+                      <Icon bg={ubuntu}>ubuntu</Icon>
+                      <Icon bg={docker}>docker</Icon>
+                    </Item>
+                  </Content>
+                </SubModule>
+                <SubModule>
+                  <Content>
+                    <Label>其他语言</Label>
+                    <Item>
+                      <Icon bg={python}>pyton</Icon>
+                      <Icon bg={ts}>TypeScript</Icon>
+                    </Item>
+                  </Content>
+                </SubModule>
+              </Module>
+              <Module>
+                <Headline>
+                  <TheHead>其他</TheHead>
+                  <Theline></Theline>
+                </Headline>
+                <SubModule>
+                  <Content>
+                    <Label>大头照</Label>
+                    <Item>
+                      <Photo></Photo>
+                    </Item>
+                  </Content>
+                </SubModule>
+                <SubModule>
+                  <Content>
+                    <Label>信奉原则：</Label>
+                    <Item>KISS，DRY</Item>
+                  </Content>
+                </SubModule>
+                <SubModule>
+                  <Content>
+                    <Label>开发环境：</Label>
+                    <Item>Macbook + 辅助屏</Item>
+                  </Content>
+                </SubModule>
+                <SubModule>
+                  <Content>
+                    <Label>家庭状况：</Label>
+                    <Item>
+                      居住在浦东，已婚，有{new Date().getFullYear() - 2018}
+                      岁女儿一枚
+                    </Item>
+                  </Content>
+                </SubModule>
+                <SubModule>
+                  <Content>
+                    <Label>联系方式：</Label>
+                    <Item>微信/手机：13482123330</Item>
+                  </Content>
+                </SubModule>
               </Module>
             </Center>
           </Body>

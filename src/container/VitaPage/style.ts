@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import * as photo from "../../assets/vita/photo.png";
 export const Icon = styled.div<{ bg: any }>`
   background: url(${props => props.bg}) center top/0.4rem 0.4rem no-repeat;
   width: 0.8rem;
@@ -73,14 +73,9 @@ export const Triangle = styled.div`
   border-bottom: 0.4rem solid #444;
 `;
 
-export const Line = styled.div`
-  background: #fff;
-  height: 0.1rem;
-`;
-
 export const Body = styled.div`
   display: flex;
-  margin: 0;
+  margin: 0.1rem 0 0 0;
   justify-content: space-between;
 `;
 
@@ -88,23 +83,24 @@ export const Left = styled.div`
   display: flex;
   flex-direction: column;
   width: 20%;
-  background: #000;
+  background-color: #000;
+  white-space: nowrap;
 `;
 
 export const Photo = styled.div`
-  margin-left: 0;
-  width: 20%;
-  background: #000;
+  background: url(${photo}) center left/100% 100% no-repeat;
+  width: 2rem;
+  height: 2rem;
 `;
 
 export const LabelLeft = styled.div`
   color: #aaa;
-  margin-left: 0.2rem;
+  margin-left: 0.1rem;
   margin-top: 0.2rem;
 `;
 export const TextLeft = styled.div`
   color: #fff;
-  margin-left: 0.2rem;
+  margin-left: 0.1rem;
   margin-top: 0.05rem;
 `;
 
@@ -177,7 +173,7 @@ export const Progress = styled.div`
   box-shadow: inset 0 0.01rem 0.04rem rgba(0, 0, 0, 0.1);
   border-radius: 0.08rem;
   height: 0.1rem;
-  width: 2rem;
+  width: 2.5rem;
   margin-left: 0.04rem;
   margin-top: 0.04rem;
 `;
