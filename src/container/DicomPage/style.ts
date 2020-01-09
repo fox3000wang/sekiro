@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as suoFang from "../../assets/icons/suo_fang.png";
+// import * as suoFang from "../../assets/icons/suo_fang.png";
 
 export const Background = styled.div`
   background: #000;
