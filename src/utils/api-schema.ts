@@ -1,15 +1,3 @@
-/**
- * Created Date: 2018-02-12T16:18:45+08:00
- * Author: xuexin.Li
- * -----
- * Last Modified: 2018-11-27T10:51:50+08:00
- * Modified By: xuexin.Li (xuexin.li@alo7.com>)
- * -----
- * Copyright (c) 2018 www.alo7.com
- * ------------------------------------
- * Javascript will save your soul!
- */
-
 import { dateToISO8601 } from './time';
 import { replaceUrlWithGetSchema } from './url-utils';
 import { get } from 'lodash';
