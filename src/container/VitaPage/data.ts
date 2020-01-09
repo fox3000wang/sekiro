@@ -1,4 +1,4 @@
-export const info: object = {
+export const info = {
   name: `王志明`,
   position: `H5前端研发工程师`,
   sub: {
@@ -15,8 +15,7 @@ export const info: object = {
     期望职业: `H5前端研发,JS全栈工程师`,
     期望行业: `任意`
   },
-  work: [
-    {
+  work: [{
       time: `2010年08月 - 2019年08月`,
       name: `上海钦文信息科技有限公司 (爱乐奇)`,
       position: `H5前端研发工程师`,
@@ -29,12 +28,10 @@ export const info: object = {
       introduction: `主要负责是对日外包项目的开发和测试，项目的业务主要是物流方面的，用的主要技术是java和oracle。通过业余时间的学习，获得了《Oracle Certified Associate》证书`
     }
   ],
-  project: [
-    {
+  project: [{
       time: `2017年05月 - 2019年08月`,
       name: `爱乐奇视频外教-线上智慧课堂(pc端mac端)(已上线)`,
-      introduction:
-        `职位名称：HTML5前端工程师\n` +
+      introduction: `职位名称：HTML5前端工程师\n` +
         `项目规模：前端5人，后端，QA，运维若干。\n` +
         `项目简介：视频外教是爱乐奇公司为培训学校提供的一套教学解决方案。通过在线视频，让外教老师授课，提升学员英语听说和应用能力。（https://www.alo7.com/services/izj.html）\n` +
         `主要技术栈：\n` +
@@ -46,8 +43,7 @@ export const info: object = {
         `rem可以解决在不同分辨率显示器页面展现问题\n` +
         `4. 渲染层: react提升UI渲染性能，提高用户体验。 UI组件模块化，提高可复用性。 \n` +
         `5.视频服务由第三方提供`,
-      duty:
-        `主要负责视频外教项目的pc端和mac端的开发，视频流服务商对接。\n` +
+      duty: `主要负责视频外教项目的pc端和mac端的开发，视频流服务商对接。\n` +
         `具体内容包括：\n` +
         `1.根据产品设计师提供的PRD和交互设计师提供的UI，开发并实现学生端，教师端相关页面开发，动画特效。 主要技术栈：electron，react，styled-components，rem\n` +
         `2.根据运维要求，每两周一次功能迭代，自动化集成发布上线。主要技术栈：webpack, glup, gitlab-ci, jenkins, docker, shell。\n` +
@@ -56,23 +52,19 @@ export const info: object = {
     {
       time: `2015年04月 - 2017年01月`,
       name: `老师教学中心-互动课件(pc端mac端)(已上线)`,
-      introduction:
-        `职位名称：HTML5前端工程师\n` +
+      introduction: `职位名称：HTML5前端工程师\n` +
         `主要技术栈：electron + JS + react + flash/as3\n` +
         `项目规模：前端平台端4人，前端内容端、后端、QA若干。\n` +
         `项目简介：项目主要是用于电子互动白板上运行的课件。`,
-      duty:
-        `主要负责平台端和内容端相关开发\n` +
+      duty: `主要负责平台端和内容端相关开发\n` +
         `具体内容：\n` +
         `1. 前端部分UI功能。 主要技术栈：react css3\n` +
         `2. 内容端部分题型实现。主要技术栈：react css3\n` +
         `3. 内容端的PPT播放器功能实现。 主要技术栈： keynote，js`
     }
   ],
-  education: [
-    {
-      time: `2000年09月 - 2004年06月`,
-      name: `中南大学 计算机科学与技术专业 本科`
-    }
-  ]
+  education: [{
+    time: `2000年09月 - 2004年06月`,
+    name: `中南大学 计算机科学与技术专业 本科`
+  }]
 };

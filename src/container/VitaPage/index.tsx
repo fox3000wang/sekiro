@@ -2,11 +2,34 @@ import * as React from "react";
 import { connect } from "react-redux";
 
 import { IAppActionProps, mapAppActions } from "../../action";
-import { Background, Layout, Head, Body, Left } from "./style";
-import { Center, Line, Title, SubTitle, Cube } from "./style";
-import { Circle, Triangle, LabelLeft, TextLeft, Headline } from "./style";
-import { Theline, TheHead, Partition, Item, Clabel } from "./style";
-import { CText, Content, CTextarea, Module, SubModule } from "./style";
+import {
+  Background,
+  Layout,
+  Head,
+  Body,
+  Left,
+  Center,
+  Line,
+  Title,
+  SubTitle,
+  Cube,
+  Circle,
+  Triangle,
+  LabelLeft,
+  TextLeft,
+  Headline,
+  Theline,
+  TheHead,
+  Item,
+  Label,
+  Text,
+  Textarea,
+  Content,
+  Module,
+  SubModule,
+  Progress,
+  Bar
+} from "./style";
 
 import { info } from "./data";
 
@@ -53,8 +76,8 @@ class VitaPage extends React.Component<IAppActionProps, any> {
                 </Headline>
                 {Object.keys(intention).map((obj, idx) => (
                   <Item key={idx}>
-                    <Clabel>{obj}：</Clabel>
-                    <CText>{intention[obj]}</CText>
+                    <Label>{obj}：</Label>
+                    <Text>{intention[obj]}</Text>
                   </Item>
                 ))}
               </Module>
@@ -65,11 +88,11 @@ class VitaPage extends React.Component<IAppActionProps, any> {
                 </Headline>
                 {work.map((obj, idx) => (
                   <SubModule key={idx}>
-                    <Clabel>{obj.time}</Clabel>
+                    <Label>{obj.time}</Label>
                     <Content>
-                      <CText>{obj.name}</CText>
-                      <Clabel>{obj.position}</Clabel>
-                      <CTextarea>{obj.introduction}</CTextarea>
+                      <Text>{obj.name}</Text>
+                      <Label>{obj.position}</Label>
+                      <Textarea>{obj.introduction}</Textarea>
                     </Content>
                   </SubModule>
                 ))}
@@ -81,13 +104,13 @@ class VitaPage extends React.Component<IAppActionProps, any> {
                 </Headline>
                 {project.map((obj, idx) => (
                   <SubModule key={idx}>
-                    <Clabel>{obj.time}</Clabel>
+                    <Label>{obj.time}</Label>
                     <Content>
-                      <CText>{obj.name}</CText>
-                      <Clabel>项目描述</Clabel>
-                      <CTextarea>{obj.introduction}</CTextarea>
-                      <Clabel>个人职责</Clabel>
-                      <CTextarea>{obj.duty}</CTextarea>
+                      <Text>{obj.name}</Text>
+                      <Label>项目描述</Label>
+                      <Textarea>{obj.introduction}</Textarea>
+                      <Label>个人职责</Label>
+                      <Textarea>{obj.duty}</Textarea>
                     </Content>
                   </SubModule>
                 ))}
@@ -100,19 +123,28 @@ class VitaPage extends React.Component<IAppActionProps, any> {
                 {education.map((obj, idx) => (
                   <SubModule key={idx}>
                     <Item>
-                      <Clabel>{obj.time}</Clabel>
+                      <Label>{obj.time}</Label>
                     </Item>
                     <Content>
-                      <CTextarea>{obj.name}</CTextarea>
+                      <Textarea>{obj.name}</Textarea>
                     </Content>
                   </SubModule>
                 ))}
               </Module>
-              <Partition></Partition>
-              <Headline>
-                <TheHead>专业技能</TheHead>
-                <Theline></Theline>
-              </Headline>
+              <Module>
+                <Headline>
+                  <TheHead>专业技能</TheHead>
+                  <Theline></Theline>
+                </Headline>
+                <SubModule>
+                  <Item>
+                    <Label></Label>
+                    <Progress>
+                      <Bar width={1 * 100} />
+                    </Progress>
+                  </Item>
+                </SubModule>
+              </Module>
             </Center>
           </Body>
         </Layout>

@@ -102,13 +102,7 @@ export const TextLeft = styled.div`
 export const Center = styled.div`
   display: flex;
   flex-direction: column;
-  /* background: #bbb; */
   width: 79%;
-`;
-
-export const Partition = styled.div`
-  height: 0.2rem;
-  width: 100%;
 `;
 
 export const Module = styled.div`
@@ -143,16 +137,16 @@ export const Item = styled.div`
   display: flex;
 `;
 
-export const Clabel = styled.div`
+export const Label = styled.div`
   color: #888;
   margin-top: 0.04rem;
 `;
-export const CText = styled.text`
+export const Text = styled.text`
   text-align: left;
   color: #000;
   margin-top: 0.02rem;
 `;
-export const CTextarea = styled.div`
+export const Textarea = styled.div`
   text-align: left;
   color: #000;
   white-space: pre-wrap;
@@ -163,4 +157,25 @@ export const Content = styled.div`
   flex-direction: column;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
+`;
+
+export const Progress = styled.div`
+  overflow: hidden;
+  background-color: #f7f7f7;
+  background-repeat: repeat-x;
+  box-shadow: inset 0 0.01rem 0.04rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.08rem;
+  height: 0.04rem;
+  margin-left: 0.04rem;
+  margin-top: 0.04rem;
+`;
+
+export const Bar = styled.div<{ width: any }>`
+  width: ${props => props.width}%;
+  height: 100%;
+  color: #ffffff;
+  float: left;
+  border-radius: 0.08rem;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(90deg, #ffee66 0%, #ff9933 100%);
 `;
