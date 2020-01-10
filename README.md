@@ -9,6 +9,7 @@
 <p align="center">
   <img src="https://travis-ci.org/fox3000wang/sekiro.svg?branch=beta">
   <img src="https://img.shields.io/badge/language-typescript-orange.svg">
+  <img src="https://codecov.io/gh/fox3000wang/sekiro/branch/beta/graph/badge.svg">
 </p>
 
 ## 简介
