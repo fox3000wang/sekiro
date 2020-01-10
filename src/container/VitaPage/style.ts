@@ -1,17 +1,10 @@
 import styled from "styled-components";
 import * as photo from "../../assets/vita/photo.png";
-export const Icon = styled.div<{ bg: any }>`
-  background: url(${props => props.bg}) center top/0.4rem 0.4rem no-repeat;
-  width: 0.8rem;
-  height: 0.6rem;
-  padding: 0.4rem 0 0 0;
-  line-height: 0.18rem;
-  text-align: center;
-`;
 
 export const Background = styled.div`
-  background: #fff;
+  background: rgba(30, 30, 30, 1);
   display: flex;
+  justify-content: center;
   font-family: PingFangSC-Semibold;
   font-size: 0.18rem;
   height: 100%;
@@ -19,7 +12,7 @@ export const Background = styled.div`
 `;
 
 export const Layout = styled.div`
-  width: 100%;
+  width: 10rem;
   height: 100%;
 `;
 
@@ -29,15 +22,15 @@ export const Head = styled.div`
   align-items: center;
   height: 1.5rem;
   margin: 0;
+  border-bottom: 0.1rem solid transparent;
+  border-color: #fff;
 `;
 
 export const Title = styled.h1`
-  /* font-size: 0.35rem; */
   color: #fff;
   margin-left: 0.2rem;
 `;
 export const SubTitle = styled.h3`
-  /* font-size: 0.2rem; */
   color: #fff;
   margin-left: 0.1rem;
 `;
@@ -75,7 +68,6 @@ export const Triangle = styled.div`
 
 export const Body = styled.div`
   display: flex;
-  margin: 0.1rem 0 0 0;
   justify-content: space-between;
 `;
 
@@ -107,7 +99,9 @@ export const TextLeft = styled.div`
 export const Center = styled.div`
   display: flex;
   flex-direction: column;
-  width: 79%;
+  width: 80%;
+  background: #fff;
+  border-left: 0.1rem solid #fff;
 `;
 
 export const Module = styled.div`
@@ -186,4 +180,13 @@ export const Bar = styled.div<{ width: any }>`
   border-radius: 0.08rem;
   background-repeat: repeat-x;
   background-image: linear-gradient(90deg, #ffee66 0%, #ff9933 100%);
+`;
+
+export const Icon = styled.div<{ bg: any }>`
+  background: url(${props => props.bg}) center top/0.4rem 0.4rem no-repeat;
+  width: 0.8rem;
+  height: 0.6rem;
+  padding: 0.4rem 0 0 0;
+  line-height: 0.18rem;
+  text-align: center;
 `;
