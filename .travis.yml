@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-  - "12"
+  - 12
+  - 11
+  - 10
+  - 9
+
+after_success:
+  - codecov
+  - bash <(curl -s https://codecov.io/bash) -t d35db60a-0a1f-4075-beb7-c9bf6c9d7ee9
