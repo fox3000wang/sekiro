@@ -7,9 +7,16 @@
 </h3>
 
 <p align="center">
-  <img src="https://travis-ci.org/fox3000wang/sekiro.svg?branch=beta">
-  <img src="https://img.shields.io/badge/language-typescript-orange.svg">
-  <img src="https://codecov.io/gh/fox3000wang/sekiro/branch/beta/graph/badge.svg">
+  <img src="https://img.shields.io/badge/language-typescript-blue.svg">
+  <a href="https://travis-ci.org/fox3000wang/sekiro">
+    <img src="https://travis-ci.org/fox3000wang/sekiro.svg?branch=beta">
+  </a>
+  <a href="https://codecov.io/gh/fox3000wang/sekiro">
+    <img src="https://codecov.io/gh/fox3000wang/sekiro/branch/beta/graph/badge.svg" />
+  </a>
+  <a href="https://hub.docker.com/r/fox3000wang/sekiro/builds">
+    <img src="https://img.shields.io/docker/cloud/build/fox3000wang/sekiro?style=flat-square"/>
+  </a>
 </p>
 
 ## 简介
