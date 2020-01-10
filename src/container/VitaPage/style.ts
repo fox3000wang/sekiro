@@ -142,7 +142,7 @@ export const Label = styled.div`
   color: #888;
   margin-top: 0.04rem;
 `;
-export const Text = styled.text`
+export const Text = styled.div`
   text-align: left;
   color: #000;
   margin-top: 0.02rem;
