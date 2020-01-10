@@ -86,7 +86,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
               {this.renderIntention(intention)}
               {this.renderWork(work)}
               {this.renderProject(project)}
-              {this.renderEdu()}
+              {this.renderEducation(education)}
               {this.renderTech()}
               {this.renderTech()}
               {this.renderSubTech()}
@@ -159,7 +159,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderEdu() {
+  renderEducation(education) {
     return (
       <Module>
         <Headline>
