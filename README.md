@@ -7,7 +7,7 @@
 </h3>
 
 <p align="center">
-  <img src="https://travis-ci.org/fox3000wang/sekiro.svg?branch=beta">
+  <img src="https://travis-ci.org/fox3000wang/sekiro.svg?branch=master">
   <img src="https://img.shields.io/badge/language-typescript-orange.svg">
 </p>
 
