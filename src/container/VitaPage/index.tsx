@@ -52,6 +52,143 @@ function mapStateToProps() {
   return {};
 }
 
+function renderTech() {
+  return (
+    <Module>
+      <Headline>
+        <TheHead>专业技能</TheHead>
+        <Theline></Theline>
+      </Headline>
+      <SubModule>
+        <Content>
+          <Item>
+            <Icon bg={es6}>es6</Icon>
+            <Progress>
+              <Bar width={75} />
+            </Progress>
+          </Item>
+          <Item>
+            <Icon bg={webpack}>webpack</Icon>
+            <Progress>
+              <Bar width={75} />
+            </Progress>
+          </Item>
+          <Item>
+            <Icon bg={react}>react</Icon>
+            <Progress>
+              <Bar width={85} />
+            </Progress>
+          </Item>
+          <Item>
+            <Icon bg={redux}>redux</Icon>
+            <Progress>
+              <Bar width={70} />
+            </Progress>
+          </Item>
+          <Item>
+            <Icon bg={css}>css3</Icon>
+            <Progress>
+              <Bar width={85} />
+            </Progress>
+          </Item>
+          <Item>
+            <Icon bg={styled}>styled-components</Icon>
+            <Progress>
+              <Bar width={82} />
+            </Progress>
+          </Item>
+        </Content>
+      </SubModule>
+    </Module>
+  );
+}
+
+function renderSubTech() {
+  return (
+    <Module>
+      <Headline>
+        <TheHead>附属技能</TheHead>
+        <Theline></Theline>
+      </Headline>
+      <SubModule>
+        <Content>
+          <Label>自动化集成</Label>
+          <Item>
+            <Icon bg={npm}>npm</Icon>
+            <Icon bg={gitlabci}>gitlab-ci</Icon>
+            <Icon bg={jenkins}>jenkins</Icon>
+          </Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>服务器</Label>
+          <Item>
+            <Icon bg={shell}>shell</Icon>
+            <Icon bg={ubuntu}>ubuntu</Icon>
+            <Icon bg={docker}>docker</Icon>
+          </Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>其他语言</Label>
+          <Item>
+            <Icon bg={python}>pyton</Icon>
+            <Icon bg={ts}>TypeScript</Icon>
+          </Item>
+        </Content>
+      </SubModule>
+    </Module>
+  );
+}
+
+function renderOther() {
+  return (
+    <Module>
+      <Headline>
+        <TheHead>其他</TheHead>
+        <Theline></Theline>
+      </Headline>
+      <SubModule>
+        <Content>
+          <Label>大头照</Label>
+          <Item>
+            <Photo></Photo>
+          </Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>信奉原则：</Label>
+          <Item>KISS，DRY</Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>开发环境：</Label>
+          <Item>Macbook + 辅助屏</Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>家庭状况：</Label>
+          <Item>
+            居住在浦东，已婚，有{new Date().getFullYear() - 2018}
+            岁女儿一枚
+          </Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>联系方式：</Label>
+          <Item>微信/手机：13482123330</Item>
+        </Content>
+      </SubModule>
+    </Module>
+  );
+}
+
 class VitaPage extends React.Component<IAppActionProps, any> {
   constructor(props: IAppActionProps) {
     super(props);
@@ -87,10 +224,9 @@ class VitaPage extends React.Component<IAppActionProps, any> {
               {this.renderWork(work)}
               {this.renderProject(project)}
               {this.renderEducation(education)}
-              {this.renderTech()}
-              {this.renderTech()}
-              {this.renderSubTech()}
-              {this.renderOther()}
+              {renderTech()}
+              {renderSubTech()}
+              {renderOther()}
             </Center>
           </Body>
         </Layout>
@@ -176,143 +312,6 @@ class VitaPage extends React.Component<IAppActionProps, any> {
             </Content>
           </SubModule>
         ))}
-      </Module>
-    );
-  }
-
-  renderTech() {
-    return (
-      <Module>
-        <Headline>
-          <TheHead>专业技能</TheHead>
-          <Theline></Theline>
-        </Headline>
-        <SubModule>
-          <Content>
-            <Item>
-              <Icon bg={es6}>es6</Icon>
-              <Progress>
-                <Bar width={75} />
-              </Progress>
-            </Item>
-            <Item>
-              <Icon bg={webpack}>webpack</Icon>
-              <Progress>
-                <Bar width={75} />
-              </Progress>
-            </Item>
-            <Item>
-              <Icon bg={react}>react</Icon>
-              <Progress>
-                <Bar width={85} />
-              </Progress>
-            </Item>
-            <Item>
-              <Icon bg={redux}>redux</Icon>
-              <Progress>
-                <Bar width={70} />
-              </Progress>
-            </Item>
-            <Item>
-              <Icon bg={css}>css3</Icon>
-              <Progress>
-                <Bar width={85} />
-              </Progress>
-            </Item>
-            <Item>
-              <Icon bg={styled}>styled-components</Icon>
-              <Progress>
-                <Bar width={82} />
-              </Progress>
-            </Item>
-          </Content>
-        </SubModule>
-      </Module>
-    );
-  }
-
-  renderSubTech() {
-    return (
-      <Module>
-        <Headline>
-          <TheHead>附属技能</TheHead>
-          <Theline></Theline>
-        </Headline>
-        <SubModule>
-          <Content>
-            <Label>自动化集成</Label>
-            <Item>
-              <Icon bg={npm}>npm</Icon>
-              <Icon bg={gitlabci}>gitlab-ci</Icon>
-              <Icon bg={jenkins}>jenkins</Icon>
-            </Item>
-          </Content>
-        </SubModule>
-        <SubModule>
-          <Content>
-            <Label>服务器</Label>
-            <Item>
-              <Icon bg={shell}>shell</Icon>
-              <Icon bg={ubuntu}>ubuntu</Icon>
-              <Icon bg={docker}>docker</Icon>
-            </Item>
-          </Content>
-        </SubModule>
-        <SubModule>
-          <Content>
-            <Label>其他语言</Label>
-            <Item>
-              <Icon bg={python}>pyton</Icon>
-              <Icon bg={ts}>TypeScript</Icon>
-            </Item>
-          </Content>
-        </SubModule>
-      </Module>
-    );
-  }
-
-  renderOther() {
-    return (
-      <Module>
-        <Headline>
-          <TheHead>其他</TheHead>
-          <Theline></Theline>
-        </Headline>
-        <SubModule>
-          <Content>
-            <Label>大头照</Label>
-            <Item>
-              <Photo></Photo>
-            </Item>
-          </Content>
-        </SubModule>
-        <SubModule>
-          <Content>
-            <Label>信奉原则：</Label>
-            <Item>KISS，DRY</Item>
-          </Content>
-        </SubModule>
-        <SubModule>
-          <Content>
-            <Label>开发环境：</Label>
-            <Item>Macbook + 辅助屏</Item>
-          </Content>
-        </SubModule>
-        <SubModule>
-          <Content>
-            <Label>家庭状况：</Label>
-            <Item>
-              居住在浦东，已婚，有{new Date().getFullYear() - 2018}
-              岁女儿一枚
-            </Item>
-          </Content>
-        </SubModule>
-        <SubModule>
-          <Content>
-            <Label>联系方式：</Label>
-            <Item>微信/手机：13482123330</Item>
-          </Content>
-        </SubModule>
       </Module>
     );
   }
