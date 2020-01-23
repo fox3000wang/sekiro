@@ -9,7 +9,7 @@
     "d": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server --progress --host 0.0.0.0 --inline --hot --config ./build/webpack.dev.conf.js",
     "build": "node build/build.js",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-    "publish": "node build/build.js && scp -r dist root@bd:/var/www/html",
+    "publish": "node build/build.js && scp -r dist/* root@bd:/var/www/html",
     "test": "echo test-----------------"
   },
   "repository": {
