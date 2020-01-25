@@ -30,7 +30,8 @@ import {
   Progress,
   Bar,
   Icon,
-  Photo
+  Photo,
+  Github
 } from "./style";
 
 import * as es6 from "../../assets/vita/es6.png";
@@ -47,6 +48,7 @@ import * as ubuntu from "../../assets/vita/ubuntu.png";
 import * as docker from "../../assets/vita/docker.png";
 import * as python from "../../assets/vita/python.png";
 import * as ts from "../../assets/vita/ts.png";
+import * as github from "../../assets/vita/github.png";
 
 function mapStateToProps() {
   return {};
@@ -161,13 +163,13 @@ function renderOther() {
       <SubModule>
         <Content>
           <Label>信奉原则：</Label>
-          <Item>KISS，DRY</Item>
+          <Item>K.I.S.S DRY</Item>
         </Content>
       </SubModule>
       <SubModule>
         <Content>
           <Label>开发环境：</Label>
-          <Item>Macbook + 辅助屏</Item>
+          <Item>Macbook</Item>
         </Content>
       </SubModule>
       <SubModule>
@@ -183,6 +185,11 @@ function renderOther() {
         <Content>
           <Label>联系方式：</Label>
           <Item>微信/手机：13482123330</Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>桂ICP备20000524号</Label>
         </Content>
       </SubModule>
     </Module>
@@ -206,6 +213,10 @@ class VitaPage extends React.Component<IAppActionProps, any> {
           <Head>
             <Title>{name}</Title>
             <SubTitle>/{position}</SubTitle>
+            <Github
+              bg={github}
+              href="https://github.com/fox3000wang/sekiro"
+            ></Github>
             <Cube></Cube>
             <Circle></Circle>
             <Triangle></Triangle>

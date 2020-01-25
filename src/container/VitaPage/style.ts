@@ -35,14 +35,27 @@ export const SubTitle = styled.h3`
   margin-left: 0.1rem;
 `;
 
+export const Github = styled.a<{ bg: any }>`
+  position: absolute;
+  background: url(${props => props.bg}) center/0.4rem no-repeat;
+  width: 0.4rem;
+  height: 0.4rem;
+  right: 0.3rem;
+  top: 0.3rem;
+  cursor: pointer;
+  &: hover {
+    border-radius: 0.2rem;
+  }
+`;
+
 export const Shape = styled.div`
   position: absolute;
   background-color: #444;
 `;
 
 export const Cube = styled(Shape)`
-  right: 0.3rem;
-  top: 0.3rem;
+  right: 1rem;
+  top: 1rem;
   width: 0.3rem;
   height: 0.3rem;
 `;
