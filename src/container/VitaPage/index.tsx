@@ -82,7 +82,8 @@ function renderOther() {
       </SubModule>
       <SubModule>
         <Content>
-          <Label>托管：aws(wangzm.cn)，百度云(wangzm.top)</Label>
+          <Label>托管</Label>
+          <Item>aws(wangzm.cn) 百度云(wangzm.top)</Item>
           <Label>备案：桂ICP备20000524号</Label>
         </Content>
       </SubModule>

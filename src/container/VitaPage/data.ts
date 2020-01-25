@@ -50,7 +50,7 @@ export const work = [
 export const project = [
   {
     time: `2017年05月 - 2019年08月`,
-    name: `爱乐奇视频外教-线上智慧课堂(pc端mac端)(已上线)`,
+    name: `爱乐奇视频外教-线上智慧课堂(pc端mac端)`,
     introduction:
       `职位名称：HTML5前端工程师\n` +
       `项目规模：前端5人，后端，QA，运维若干。\n` +
@@ -67,13 +67,13 @@ export const project = [
     duty:
       `主要负责视频外教项目的pc端和mac端的开发，视频流服务商对接。\n` +
       `具体内容包括：\n` +
-      `1.根据产品设计师提供的PRD和交互设计师提供的UI，开发并实现学生端，教师端相关页面开发，动画特效。 主要技术栈：electron，react，styled-components，rem\n` +
+      `1.根据产品设计师提供的PRD和交互设计师提供的UI，开发并实现学生端，教师端相关页面开发，动画特效。 主要技术栈：electron，react，styled-components\n` +
       `2.根据运维要求，每两周一次功能迭代，自动化集成发布上线。主要技术栈：webpack, glup, gitlab-ci, jenkins, docker, shell。\n` +
       `3.采集用户相关的数据和错误栈，管理和监控项目健康状况。 主要技术栈：kibana，elasticsearch, bi。`
   },
   {
     time: `2015年04月 - 2017年01月`,
-    name: `老师教学中心-互动课件(pc端mac端)(已上线)`,
+    name: `老师教学中心-互动课件(pc端mac端)`,
     introduction:
       `职位名称：HTML5前端工程师\n` +
       `主要技术栈：electron + JS + react + flash/as3\n` +
