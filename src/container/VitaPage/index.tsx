@@ -56,7 +56,7 @@ function renderOther() {
       <SubModule>
         <Content>
           <Label>信奉原则：</Label>
-          <Item>K.I.S.S DRY</Item>
+          <Item>K.I.S.S. DRY</Item>
         </Content>
       </SubModule>
       <SubModule>
