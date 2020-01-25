@@ -2,7 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 
 import { IAppActionProps, mapAppActions } from "../../action";
-import { info } from "./data";
+import { info, work, project, education, tech, subTech } from "./data";
 import {
   Background,
   Layout,
@@ -34,115 +34,8 @@ import {
   Github
 } from "./style";
 
-import * as es6 from "../../assets/vita/es6.png";
-import * as react from "../../assets/vita/react.png";
-import * as redux from "../../assets/vita/redux.png";
-import * as styled from "../../assets/vita/styled-components.png";
-import * as css from "../../assets/vita/css3.png";
-import * as webpack from "../../assets/vita/webpack.png";
-import * as npm from "../../assets/vita/npm.png";
-import * as jenkins from "../../assets/vita/jenkins.png";
-import * as gitlabci from "../../assets/vita/gitlab-ci.png";
-import * as shell from "../../assets/vita/shell.png";
-import * as ubuntu from "../../assets/vita/ubuntu.png";
-import * as docker from "../../assets/vita/docker.png";
-import * as python from "../../assets/vita/python.png";
-import * as ts from "../../assets/vita/ts.png";
-import * as github from "../../assets/vita/github.png";
-
 function mapStateToProps() {
   return {};
-}
-
-function renderTech() {
-  return (
-    <Module>
-      <Headline>
-        <TheHead>专业技能</TheHead>
-        <Theline></Theline>
-      </Headline>
-      <SubModule>
-        <Content>
-          <Item>
-            <Icon bg={es6}>es6</Icon>
-            <Progress>
-              <Bar width={75} />
-            </Progress>
-          </Item>
-          <Item>
-            <Icon bg={webpack}>webpack</Icon>
-            <Progress>
-              <Bar width={75} />
-            </Progress>
-          </Item>
-          <Item>
-            <Icon bg={react}>react</Icon>
-            <Progress>
-              <Bar width={85} />
-            </Progress>
-          </Item>
-          <Item>
-            <Icon bg={redux}>redux</Icon>
-            <Progress>
-              <Bar width={70} />
-            </Progress>
-          </Item>
-          <Item>
-            <Icon bg={css}>css3</Icon>
-            <Progress>
-              <Bar width={85} />
-            </Progress>
-          </Item>
-          <Item>
-            <Icon bg={styled}>styled-components</Icon>
-            <Progress>
-              <Bar width={82} />
-            </Progress>
-          </Item>
-        </Content>
-      </SubModule>
-    </Module>
-  );
-}
-
-function renderSubTech() {
-  return (
-    <Module>
-      <Headline>
-        <TheHead>附属技能</TheHead>
-        <Theline></Theline>
-      </Headline>
-      <SubModule>
-        <Content>
-          <Label>自动化集成</Label>
-          <Item>
-            <Icon bg={npm}>npm</Icon>
-            <Icon bg={gitlabci}>gitlab-ci</Icon>
-            <Icon bg={jenkins}>jenkins</Icon>
-          </Item>
-        </Content>
-      </SubModule>
-      <SubModule>
-        <Content>
-          <Label>服务器</Label>
-          <Item>
-            <Icon bg={shell}>shell</Icon>
-            <Icon bg={ubuntu}>ubuntu</Icon>
-            <Icon bg={docker}>docker</Icon>
-          </Item>
-        </Content>
-      </SubModule>
-      <SubModule>
-        <Content>
-          <Label>其他语言</Label>
-          <Item>
-            <Icon bg={python}>pyton</Icon>
-            <Icon bg={ts}>TypeScript</Icon>
-          </Item>
-        </Content>
-      </SubModule>
-    </Module>
-  );
 }
 
 function renderOther() {
@@ -169,7 +62,7 @@ function renderOther() {
       <SubModule>
         <Content>
           <Label>开发环境：</Label>
-          <Item>Macbook</Item>
+          <Item>Macbook, vscode</Item>
         </Content>
       </SubModule>
       <SubModule>
@@ -189,7 +82,8 @@ function renderOther() {
       </SubModule>
       <SubModule>
         <Content>
-          <Label>桂ICP备20000524号</Label>
+          <Label>托管：aws(wangzm.cn)，百度云(wangzm.top)</Label>
+          <Label>备案：桂ICP备20000524号</Label>
         </Content>
       </SubModule>
     </Module>
@@ -205,7 +99,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
   }
 
   render() {
-    const { name, position, sub, intention, work, project, education } = info;
+    const { name, position, sub, intention } = info;
 
     return (
       <Background>
@@ -213,10 +107,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
           <Head>
             <Title>{name}</Title>
             <SubTitle>/{position}</SubTitle>
-            <Github
-              bg={github}
-              href="https://github.com/fox3000wang/sekiro"
-            ></Github>
+            <Github href="https://github.com/fox3000wang/sekiro"></Github>
             <Cube></Cube>
             <Circle></Circle>
             <Triangle></Triangle>
@@ -232,11 +123,11 @@ class VitaPage extends React.Component<IAppActionProps, any> {
             </Left>
             <Center>
               {this.renderIntention(intention)}
-              {this.renderWork(work)}
-              {this.renderProject(project)}
-              {this.renderEducation(education)}
-              {renderTech()}
-              {renderSubTech()}
+              {this.renderWork()}
+              {this.renderProject()}
+              {this.renderEducation()}
+              {this.renderTech()}
+              {this.renderSubTech()}
               {renderOther()}
             </Center>
           </Body>
@@ -262,7 +153,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderWork(work) {
+  renderWork() {
     return (
       <Module>
         <Headline>
@@ -283,7 +174,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderProject(project) {
+  renderProject() {
     return (
       <Module>
         <Headline>
@@ -306,7 +197,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderEducation(education) {
+  renderEducation() {
     return (
       <Module>
         <Headline>
@@ -320,6 +211,54 @@ class VitaPage extends React.Component<IAppActionProps, any> {
             </Item>
             <Content>
               <Textarea>{obj.name}</Textarea>
+            </Content>
+          </SubModule>
+        ))}
+      </Module>
+    );
+  }
+
+  renderTech() {
+    return (
+      <Module>
+        <Headline>
+          <TheHead>专业技能</TheHead>
+          <Theline></Theline>
+        </Headline>
+        {tech.map((obj, idx) => (
+          <SubModule key={idx}>
+            <Content>
+              <Item>
+                <Icon bg={obj.bg}>{obj.name}</Icon>
+                <Progress>
+                  <Bar width={obj.width} />
+                </Progress>
+              </Item>
+            </Content>
+          </SubModule>
+        ))}
+      </Module>
+    );
+  }
+
+  renderSubTech() {
+    return (
+      <Module>
+        <Headline>
+          <TheHead>附属技能</TheHead>
+          <Theline></Theline>
+        </Headline>
+        {subTech.map((obj, idx) => (
+          <SubModule key={idx}>
+            <Content>
+              <Label>{obj.category}</Label>
+              <Item>
+                {obj.tech.map((o, i) => (
+                  <Icon key={i} bg={o.bg}>
+                    {o.name}
+                  </Icon>
+                ))}
+              </Item>
             </Content>
           </SubModule>
         ))}

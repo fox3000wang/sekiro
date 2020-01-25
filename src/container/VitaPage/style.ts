@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import * as photo from "../../assets/vita/photo.png";
-
+import * as github from "../../assets/vita/github.png";
 export const Background = styled.div`
   background: rgba(30, 30, 30, 1);
   display: flex;
@@ -35,9 +35,9 @@ export const SubTitle = styled.h3`
   margin-left: 0.1rem;
 `;
 
-export const Github = styled.a<{ bg: any }>`
+export const Github = styled.a`
   position: absolute;
-  background: url(${props => props.bg}) center/0.4rem no-repeat;
+  background: url(${github}) center/0.4rem no-repeat;
   width: 0.4rem;
   height: 0.4rem;
   right: 0.3rem;
