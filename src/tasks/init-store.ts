@@ -9,7 +9,6 @@ import {
 import { routerReducer, routerMiddleware } from "react-router-redux";
 import { createBrowserHistory as createHistory } from "history";
 import reducers from "../reducer";
-import * as _ from "lodash";
 import { conbinedActions } from "../action";
 
 const ignoreAction = {
@@ -27,12 +26,7 @@ export interface IDependency {
 
 export default (context: any) => {
   // use chrome extension
-  const composeEnhancers =
-    (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-        actionsBlacklist: Object.keys(ignoreAction)
-      })) ||
-    compose;
+  const composeEnhancers = compose;
 
   // history
   const history = createHistory();
