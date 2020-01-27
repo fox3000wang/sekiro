@@ -17,7 +17,8 @@
   <a href="https://hub.docker.com/r/fox3000wang/sekiro/builds">
     <img src="https://img.shields.io/docker/cloud/build/fox3000wang/sekiro?style=flat-square"/>
   </a>
-  <a href="https://codebeat.co/projects/github-com-fox3000wang-sekiro-beta"><img alt="codebeat badge" src="https://codebeat.co/badges/76d66b0a-9451-4921-a106-38bb71904b03" /></a>
+  <a href="https://codebeat.co/projects/github-com-fox3000wang-sekiro-beta">
+  <img src="https://codebeat.co/badges/76d66b0a-9451-4921-a106-38bb71904b03" /></a>
 </p>
 
 ## 简介
