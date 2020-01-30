@@ -1,13 +1,12 @@
 /* tslint:disable */
-declare module '*.png';
-declare module '*.jpg';
-declare module '*.gif';
-declare module '*.xml';
-declare module '*.json';
-declare module '*.css';
-
-declare module '*.mp3';
-declare module '*.wav';
+declare module "*.png";
+declare module "*.jpg";
+declare module "*.gif";
+declare module "*.xml";
+declare module "*.json";
+declare module "*.css";
+declare module "*.mp3";
+declare module "*.wav";
 
 type reduxDispatch = (action: any) => void;
 

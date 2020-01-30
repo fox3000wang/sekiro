@@ -1,6 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 
+import { RootState } from "../../reducer";
 import { IAppActionProps, mapAppActions } from "../../action";
 import { info, work, project, education, tech, subTech } from "./data";
 import {
@@ -33,9 +34,11 @@ import {
   Photo,
   Github
 } from "./style";
+import { setVitaInfo } from "../../action/vita";
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state: RootState) {
+  const { vitaInfo } = state.appData;
+  return { vitaInfo };
 }
 
 function renderOther() {
@@ -99,8 +102,19 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     };
   }
 
+  componentDidMount() {
+    setVitaInfo({ info, work, project, education, tech, subTech });
+  }
+
   render() {
     const { name, position, sub, intention } = info;
+
+    const { vitaInfo } = this.props;
+    if (!vitaInfo) {
+      return <div></div>;
+    }
+
+    const { work } = vitaInfo;
 
     return (
       <Background>
@@ -124,7 +138,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
             </Left>
             <Center>
               {this.renderIntention(intention)}
-              {this.renderWork()}
+              {this.renderWork(work)}
               {this.renderProject()}
               {this.renderEducation()}
               {this.renderTech()}
@@ -154,7 +168,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderWork() {
+  renderWork(work) {
     return (
       <Module>
         <Headline>
