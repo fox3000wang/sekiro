@@ -28,9 +28,7 @@ export interface IVitaInfo {
 }
 const vitaInfo = handleAction<IVitaInfo, IVitaInfo>(
   SET_VIST_INFO,
-  (state, action) => {
-    return action.payload;
-  },
+  returnPayload,
   null
 );
 

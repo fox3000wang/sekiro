@@ -15,12 +15,7 @@ interface Window {
   stopMock: (apiName: any, axios: any) => void;
 
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: (args: any) => any;
-  __AOC_STORE__: any;
-  __GET_ROOM_SUMMARY__: () => any;
-  __GET_SHARE_DOM_RECT__: () => any;
-  __UPDATE_SCREEN_SHARE__: () => void;
-  next: number;
-  zE: any;
+  __STORE__: any;
   require: (...args: any) => any;
   exp: Experiments;
 }

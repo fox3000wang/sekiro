@@ -20,7 +20,6 @@ import reducers from "../reducer";
 import { conbinedActions, mapAppActions } from "../action";
 import { Dispatch } from "react";
 import { routerMiddleware, routerReducer } from "react-router-redux";
-import { actions } from "@storybook/addon-actions";
 
 const ignoreAction = {};
 
@@ -39,11 +38,11 @@ const catchErrorMiddleware = (store: any) => (next: Dispatch<AnyAction>) => (
   }
 };
 
-export interface IDependency {
-  api: Api;
-  exp: AOCExperiment;
-  service: ServiceProxy;
-}
+// export interface IDependency {
+//   api: Api;
+//   exp: Experiment;
+//   service: ServiceProxy;
+// }
 
 export default (context: any) => {
   // use chrome extension
@@ -79,13 +78,6 @@ export default (context: any) => {
   // history
   const history = createHistory();
 
-  // const store = configureStore({
-  //   // 目前 devTools 无法自定义,所以不支持以前的白名单了,已经有 prhttps://github.com/reduxjs/redux-starter-kit/pull/130/files
-  //   devTools: true,
-  //   reducer: reducers,
-  //   middleware: [...starterKitDefaultMiddleware, catchErrorMiddleware]
-  // });
-
   const middlewares = [thunk, routerMiddleware(history)];
 
   const store = createStore(
@@ -100,7 +92,7 @@ export default (context: any) => {
     bindActionCreators(action as any, store.dispatch)
   );
 
-  window.__AOC_STORE__ = store;
+  window.__STORE__ = store;
 
   return Promise.resolve({ ...context, ...{ store, history, actions } });
 };

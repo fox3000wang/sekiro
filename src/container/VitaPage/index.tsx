@@ -103,18 +103,20 @@ class VitaPage extends React.Component<IAppActionProps, any> {
   }
 
   componentDidMount() {
-    setVitaInfo({ info, work, project, education, tech, subTech });
+    // 如果实在没办法，可以用这种邪道为state树赋值,作为view的组件，这行代码不应该出现在这里。
+    window.__STORE__.dispatch(
+      setVitaInfo({ info, work, project, education, tech, subTech })
+    );
   }
 
   render() {
-    const { name, position, sub, intention } = info;
-
     const { vitaInfo } = this.props;
     if (!vitaInfo) {
       return <div></div>;
     }
 
-    const { work } = vitaInfo;
+    const { info, work, project, education, tech, subTech } = vitaInfo;
+    const { name, position, intention, sub } = info;
 
     return (
       <Background>
@@ -139,10 +141,10 @@ class VitaPage extends React.Component<IAppActionProps, any> {
             <Center>
               {this.renderIntention(intention)}
               {this.renderWork(work)}
-              {this.renderProject()}
-              {this.renderEducation()}
-              {this.renderTech()}
-              {this.renderSubTech()}
+              {this.renderProject(project)}
+              {this.renderEducation(education)}
+              {this.renderTech(tech)}
+              {this.renderSubTech(subTech)}
               {renderOther()}
             </Center>
           </Body>
