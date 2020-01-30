@@ -57,11 +57,10 @@ export const project = [
       `项目简介：视频外教是爱乐奇公司为培训学校提供的一套教学解决方案。通过在线视频，让外教老师授课，提升学员英语听说和应用能力。（https://www.alo7.com/services/izj.html）\n` +
       `主要技术栈：\n` +
       `1. 底层：js(ES6), TS。\n` +
-      `用TS的目的是TS数据要求带有明确的类型，便于在项目逐渐变大以后方便团队协作。\n` +
+      `    用TS的目的是TS数据要求带有明确的类型，便于在项目逐渐变大以后方便团队协作。\n` +
       `2. 封装：electron 解决了跨平台，自动更新，安装应用\n` +
-      `3. UI:css3，rem，styled-components\n` +
-      `styled-components可以解决css中不能带逻辑，可以减少css相关的代码。\n` +
-      `rem可以解决在不同分辨率显示器页面展现问题\n` +
+      `3. UI:css3，styled-components\n` +
+      `    styled-components可以解决css中不能带逻辑，可以像用组件的方式的来复用css的样式。\n` +
       `4. 渲染层: react提升UI渲染性能，提高用户体验。 UI组件模块化，提高可复用性。 \n` +
       `5.视频服务由第三方提供`,
     duty:
