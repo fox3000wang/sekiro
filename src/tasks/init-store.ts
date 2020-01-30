@@ -47,7 +47,12 @@ export interface IDependency {
 
 export default (context: any) => {
   // use chrome extension
-  const composeEnhancers = compose;
+  const composeEnhancers =
+    (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        actionsBlacklist: Object.keys(ignoreAction)
+      })) ||
+    compose;
 
   const serializableMiddleware = createSerializableStateInvariantMiddleware({
     isSerializable: val => {
