@@ -22,10 +22,13 @@ export const info = {
   sub: {
     英文名: `Fox`,
     性别: `男`,
+    祖籍: `上海`,
     年龄: `${new Date().getFullYear() - 1981}岁`,
     工作地点: `上海浦东`,
     工龄: `${new Date().getFullYear() - 2006}年`,
-    政治面貌: `群众`
+    政治面貌: `群众`,
+    兴趣:`阅读,旅游`,
+    运动:`马拉松`
   },
   intention: {
     工作类型: `全职`,
