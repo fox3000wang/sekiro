@@ -5,6 +5,9 @@ import * as _ from "lodash";
 import * as common from "./common";
 import * as vita from "./vita";
 
+/**
+ * 模块和模块直接分离各自的action
+ */
 const actionList = {
   common: common,
   vita: vita

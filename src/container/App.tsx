@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Switch, Route } from "react-router";
 import VitaPage from "./VitaPage";
+import { VITA } from "../consts/route-names";
 
 class App extends React.Component<any, any> {
   static displayName = "App";
@@ -14,7 +15,7 @@ class App extends React.Component<any, any> {
         }}
       >
         <Switch>
-          <Route path="/" component={VitaPage} />
+          <Route path={VITA} component={VitaPage} />
         </Switch>
       </div>
     );

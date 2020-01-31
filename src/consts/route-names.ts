@@ -1,1 +1,1 @@
-export const MAIN_PAGE = "/main";
+export const VITA = "/";
