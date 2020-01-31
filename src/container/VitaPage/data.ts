@@ -12,6 +12,9 @@ import * as ubuntu from "../../assets/vita/ubuntu.png";
 import * as docker from "../../assets/vita/docker.png";
 import * as python from "../../assets/vita/python.png";
 import * as ts from "../../assets/vita/ts.png";
+import * as git from "../../assets/vita/git.png";
+import * as mysql from "../../assets/vita/mysql.png";
+import * as aws from "../../assets/vita/aws.png";
 
 export const info = {
   name: `王志明`,
@@ -177,16 +180,20 @@ export const subTech = [
     category: `服务器`,
     tech: [
       {
-        bg: shell,
-        name: `shell`
-      },
-      {
         bg: ubuntu,
         name: `ubuntu`
       },
       {
+        bg: shell,
+        name: `shell`
+      },
+      {
         bg: docker,
-        name: `docker `
+        name: `docker`
+      },
+      {
+        bg: aws,
+        name: `云服务器`
       }
     ]
   },
@@ -200,6 +207,19 @@ export const subTech = [
       {
         bg: ts,
         name: `TypeScript`
+      }
+    ]
+  },
+  {
+    category: `其他技术`,
+    tech: [
+      {
+        bg: git,
+        name: `git`
+      },
+      {
+        bg: mysql,
+        name: `mysql`
       }
     ]
   }

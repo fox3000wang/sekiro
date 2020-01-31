@@ -32,7 +32,8 @@ import {
   Bar,
   Icon,
   Photo,
-  Github
+  Github,
+  Foot
 } from "./style";
 import { setVitaInfo } from "../../action/vita";
 
@@ -59,7 +60,7 @@ function renderOther() {
       <SubModule>
         <Content>
           <Label>信奉原则：</Label>
-          <Item>K.I.S.S. DRY</Item>
+          <Item>DRY K.I.S.S. Keep Learning</Item>
         </Content>
       </SubModule>
       <SubModule>
@@ -79,6 +80,12 @@ function renderOther() {
       </SubModule>
       <SubModule>
         <Content>
+          <Label>职业状况：</Label>
+          <Item>离职，可一周内到岗</Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
           <Label>联系方式：</Label>
           <Item>微信/手机：13482123330</Item>
         </Content>
@@ -87,7 +94,6 @@ function renderOther() {
         <Content>
           <Label>托管</Label>
           <Item>aws(wangzm.cn) 百度云(wangzm.top)</Item>
-          <Label>备案：桂ICP备20000524号</Label>
         </Content>
       </SubModule>
     </Module>
@@ -148,6 +154,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
               {renderOther()}
             </Center>
           </Body>
+          <Foot>桂ICP备20000524号</Foot>
         </Layout>
       </Background>
     );

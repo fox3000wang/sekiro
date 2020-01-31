@@ -9,7 +9,7 @@ export const Background = styled.div`
   font-size: 0.18rem;
   height: 100%;
   overflow-y: auto;
-  -webkit-overflow-scrolling : touch;
+  -webkit-overflow-scrolling: touch;
 `;
 
 export const Layout = styled.div`
@@ -179,9 +179,9 @@ export const Progress = styled.div`
   background-color: #f7f7f7;
   background-repeat: repeat-x;
   box-shadow: inset 0 0.01rem 0.04rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.08rem;
-  height: 0.1rem;
-  width: 2.5rem;
+  border-radius: 0.1rem;
+  height: 0.18rem;
+  width: 75%;
   margin-left: 0.04rem;
   margin-top: 0.04rem;
 `;
@@ -189,7 +189,7 @@ export const Progress = styled.div`
 export const Bar = styled.div<{ width: any }>`
   width: ${props => props.width}%;
   height: 100%;
-  color: #ffffff;
+  color: #fff;
   float: left;
   border-radius: 0.08rem;
   background-repeat: repeat-x;
@@ -203,4 +203,14 @@ export const Icon = styled.div<{ bg: any }>`
   padding: 0.4rem 0 0 0;
   line-height: 0.18rem;
   text-align: center;
+`;
+
+export const Foot = styled.div`
+  background: #fff;
+  text-align: center;
+  height: 0.4rem;
+  margin: 0;
+  color: #aaa;
+  border-top: 1px solid transparent;
+  border-color: #aaa;
 `;
