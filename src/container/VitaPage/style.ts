@@ -9,6 +9,7 @@ export const Background = styled.div`
   font-size: 0.18rem;
   height: 100%;
   overflow-y: auto;
+  -webkit-overflow-scrolling : touch;
 `;
 
 export const Layout = styled.div`
