@@ -6,7 +6,6 @@
     "transform-runtime",
     "transform-async-to-generator",
     "transform-decorators-legacy",
-    "lodash",
     "react-hot-loader/babel",
     "transform-function-bind",
     "add-react-displayname",

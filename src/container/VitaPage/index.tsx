@@ -1,8 +1,9 @@
 import * as React from "react";
 import { connect } from "react-redux";
 
+import { RootState } from "../../reducer";
 import { IAppActionProps, mapAppActions } from "../../action";
-import { info } from "./data";
+import { info, work, project, education, tech, subTech } from "./data";
 import {
   Background,
   Layout,
@@ -30,26 +31,73 @@ import {
   Progress,
   Bar,
   Icon,
-  Photo
+  Photo,
+  Github,
+  Foot
 } from "./style";
+import { setVitaInfo } from "../../action/vita";
 
-import * as es6 from "../../assets/vita/es6.png";
-import * as react from "../../assets/vita/react.png";
-import * as redux from "../../assets/vita/redux.png";
-import * as styled from "../../assets/vita/styled-components.png";
-import * as css from "../../assets/vita/css3.png";
-import * as webpack from "../../assets/vita/webpack.png";
-import * as npm from "../../assets/vita/npm.png";
-import * as jenkins from "../../assets/vita/jenkins.png";
-import * as gitlabci from "../../assets/vita/gitlab-ci.png";
-import * as shell from "../../assets/vita/shell.png";
-import * as ubuntu from "../../assets/vita/ubuntu.png";
-import * as docker from "../../assets/vita/docker.png";
-import * as python from "../../assets/vita/python.png";
-import * as ts from "../../assets/vita/ts.png";
+function mapStateToProps(state: RootState) {
+  const { vitaInfo } = state.appData;
+  return { vitaInfo };
+}
 
-function mapStateToProps() {
-  return {};
+function renderOther() {
+  return (
+    <Module>
+      <Headline>
+        <TheHead>其他</TheHead>
+        <Theline></Theline>
+      </Headline>
+      <SubModule>
+        <Content>
+          <Label>大头照</Label>
+          <Item>
+            <Photo></Photo>
+          </Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>信奉原则：</Label>
+          <Item>DRY K.I.S.S. Keep Learning</Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>开发环境：</Label>
+          <Item>Macbook, vscode</Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>家庭状况：</Label>
+          <Item>
+            居住在浦东，已婚，有{new Date().getFullYear() - 2018}
+            岁女儿一枚
+          </Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>职业状况：</Label>
+          <Item>离职，可一周内到岗</Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>联系方式：</Label>
+          <Item>微信/手机：13482123330</Item>
+        </Content>
+      </SubModule>
+      <SubModule>
+        <Content>
+          <Label>托管</Label>
+          <Item>aws(wangzm.cn) 百度云(wangzm.top)</Item>
+        </Content>
+      </SubModule>
+    </Module>
+  );
 }
 
 class VitaPage extends React.Component<IAppActionProps, any> {
@@ -60,8 +108,21 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     };
   }
 
+  componentDidMount() {
+    // 如果实在没办法，可以用这种邪道为state树赋值,作为view的组件，这行代码不应该出现在这里。
+    window.__STORE__.dispatch(
+      setVitaInfo({ info, work, project, education, tech, subTech })
+    );
+  }
+
   render() {
-    const { name, position, sub, intention, work, project, education } = info;
+    const { vitaInfo } = this.props;
+    if (!vitaInfo) {
+      return <div></div>;
+    }
+
+    const { info, work, project, education, tech, subTech } = vitaInfo;
+    const { name, position, intention, sub } = info;
 
     return (
       <Background>
@@ -69,6 +130,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
           <Head>
             <Title>{name}</Title>
             <SubTitle>/{position}</SubTitle>
+            <Github href="https://github.com/fox3000wang/sekiro"></Github>
             <Cube></Cube>
             <Circle></Circle>
             <Triangle></Triangle>
@@ -83,194 +145,148 @@ class VitaPage extends React.Component<IAppActionProps, any> {
               ))}
             </Left>
             <Center>
-              <Module>
-                <Headline>
-                  <TheHead>求职意向</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                {Object.keys(intention).map((obj, idx) => (
-                  <Item key={idx}>
-                    <Label>{obj}：</Label>
-                    <Text>{intention[obj]}</Text>
-                  </Item>
-                ))}
-              </Module>
-              <Module>
-                <Headline>
-                  <TheHead>工作经历</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                {work.map((obj, idx) => (
-                  <SubModule key={idx}>
-                    <Label>{obj.time}</Label>
-                    <Content>
-                      <Text>{obj.name}</Text>
-                      <Label>{obj.position}</Label>
-                      <Textarea>{obj.introduction}</Textarea>
-                    </Content>
-                  </SubModule>
-                ))}
-              </Module>
-              <Module>
-                <Headline>
-                  <TheHead>项目经验</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                {project.map((obj, idx) => (
-                  <SubModule key={idx}>
-                    <Label>{obj.time}</Label>
-                    <Content>
-                      <Text>{obj.name}</Text>
-                      <Label>项目描述</Label>
-                      <Textarea>{obj.introduction}</Textarea>
-                      <Label>个人职责</Label>
-                      <Textarea>{obj.duty}</Textarea>
-                    </Content>
-                  </SubModule>
-                ))}
-              </Module>
-              <Module>
-                <Headline>
-                  <TheHead>教育经历</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                {education.map((obj, idx) => (
-                  <SubModule key={idx}>
-                    <Item>
-                      <Label>{obj.time}</Label>
-                    </Item>
-                    <Content>
-                      <Textarea>{obj.name}</Textarea>
-                    </Content>
-                  </SubModule>
-                ))}
-              </Module>
-              <Module>
-                <Headline>
-                  <TheHead>专业技能</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                <SubModule>
-                  <Content>
-                    <Item>
-                      <Icon bg={es6}>es6</Icon>
-                      <Progress>
-                        <Bar width={75} />
-                      </Progress>
-                    </Item>
-                    <Item>
-                      <Icon bg={webpack}>webpack</Icon>
-                      <Progress>
-                        <Bar width={75} />
-                      </Progress>
-                    </Item>
-                    <Item>
-                      <Icon bg={react}>react</Icon>
-                      <Progress>
-                        <Bar width={85} />
-                      </Progress>
-                    </Item>
-                    <Item>
-                      <Icon bg={redux}>redux</Icon>
-                      <Progress>
-                        <Bar width={70} />
-                      </Progress>
-                    </Item>
-                    <Item>
-                      <Icon bg={css}>css3</Icon>
-                      <Progress>
-                        <Bar width={85} />
-                      </Progress>
-                    </Item>
-                    <Item>
-                      <Icon bg={styled}>styled-components</Icon>
-                      <Progress>
-                        <Bar width={82} />
-                      </Progress>
-                    </Item>
-                  </Content>
-                </SubModule>
-              </Module>
-              <Module>
-                <Headline>
-                  <TheHead>附属技能</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                <SubModule>
-                  <Content>
-                    <Label>自动化集成</Label>
-                    <Item>
-                      <Icon bg={npm}>npm</Icon>
-                      <Icon bg={gitlabci}>gitlab-ci</Icon>
-                      <Icon bg={jenkins}>jenkins</Icon>
-                    </Item>
-                  </Content>
-                </SubModule>
-                <SubModule>
-                  <Content>
-                    <Label>服务器</Label>
-                    <Item>
-                      <Icon bg={shell}>shell</Icon>
-                      <Icon bg={ubuntu}>ubuntu</Icon>
-                      <Icon bg={docker}>docker</Icon>
-                    </Item>
-                  </Content>
-                </SubModule>
-                <SubModule>
-                  <Content>
-                    <Label>其他语言</Label>
-                    <Item>
-                      <Icon bg={python}>pyton</Icon>
-                      <Icon bg={ts}>TypeScript</Icon>
-                    </Item>
-                  </Content>
-                </SubModule>
-              </Module>
-              <Module>
-                <Headline>
-                  <TheHead>其他</TheHead>
-                  <Theline></Theline>
-                </Headline>
-                <SubModule>
-                  <Content>
-                    <Label>大头照</Label>
-                    <Item>
-                      <Photo></Photo>
-                    </Item>
-                  </Content>
-                </SubModule>
-                <SubModule>
-                  <Content>
-                    <Label>信奉原则：</Label>
-                    <Item>KISS，DRY</Item>
-                  </Content>
-                </SubModule>
-                <SubModule>
-                  <Content>
-                    <Label>开发环境：</Label>
-                    <Item>Macbook + 辅助屏</Item>
-                  </Content>
-                </SubModule>
-                <SubModule>
-                  <Content>
-                    <Label>家庭状况：</Label>
-                    <Item>
-                      居住在浦东，已婚，有{new Date().getFullYear() - 2018}
-                      岁女儿一枚
-                    </Item>
-                  </Content>
-                </SubModule>
-                <SubModule>
-                  <Content>
-                    <Label>联系方式：</Label>
-                    <Item>微信/手机：13482123330</Item>
-                  </Content>
-                </SubModule>
-              </Module>
+              {this.renderIntention(intention)}
+              {this.renderWork(work)}
+              {this.renderProject(project)}
+              {this.renderEducation(education)}
+              {this.renderTech(tech)}
+              {this.renderSubTech(subTech)}
+              {renderOther()}
             </Center>
           </Body>
+          <Foot>桂ICP备20000524号</Foot>
         </Layout>
       </Background>
+    );
+  }
+
+  renderIntention(intention) {
+    return (
+      <Module>
+        <Headline>
+          <TheHead>求职意向</TheHead>
+          <Theline></Theline>
+        </Headline>
+        {Object.keys(intention).map((obj, idx) => (
+          <Item key={idx}>
+            <Label>{obj}：</Label>
+            <Text>{intention[obj]}</Text>
+          </Item>
+        ))}
+      </Module>
+    );
+  }
+
+  renderWork(work) {
+    return (
+      <Module>
+        <Headline>
+          <TheHead>工作经历</TheHead>
+          <Theline></Theline>
+        </Headline>
+        {work.map((obj, idx) => (
+          <SubModule key={idx}>
+            <Label>{obj.time}</Label>
+            <Content>
+              <Text>{obj.name}</Text>
+              <Label>{obj.position}</Label>
+              <Textarea>{obj.introduction}</Textarea>
+            </Content>
+          </SubModule>
+        ))}
+      </Module>
+    );
+  }
+
+  renderProject() {
+    return (
+      <Module>
+        <Headline>
+          <TheHead>项目经验</TheHead>
+          <Theline></Theline>
+        </Headline>
+        {project.map((obj, idx) => (
+          <SubModule key={idx}>
+            <Label>{obj.time}</Label>
+            <Content>
+              <Text>{obj.name}</Text>
+              <Label>项目描述</Label>
+              <Textarea>{obj.introduction}</Textarea>
+              <Label>个人职责</Label>
+              <Textarea>{obj.duty}</Textarea>
+            </Content>
+          </SubModule>
+        ))}
+      </Module>
+    );
+  }
+
+  renderEducation() {
+    return (
+      <Module>
+        <Headline>
+          <TheHead>教育经历</TheHead>
+          <Theline></Theline>
+        </Headline>
+        {education.map((obj, idx) => (
+          <SubModule key={idx}>
+            <Item>
+              <Label>{obj.time}</Label>
+            </Item>
+            <Content>
+              <Textarea>{obj.name}</Textarea>
+            </Content>
+          </SubModule>
+        ))}
+      </Module>
+    );
+  }
+
+  renderTech() {
+    return (
+      <Module>
+        <Headline>
+          <TheHead>专业技能</TheHead>
+          <Theline></Theline>
+        </Headline>
+        {tech.map((obj, idx) => (
+          <SubModule key={idx}>
+            <Content>
+              <Item>
+                <Icon bg={obj.bg}>{obj.name}</Icon>
+                <Progress>
+                  <Bar width={obj.width} />
+                </Progress>
+              </Item>
+            </Content>
+          </SubModule>
+        ))}
+      </Module>
+    );
+  }
+
+  renderSubTech() {
+    return (
+      <Module>
+        <Headline>
+          <TheHead>附属技能</TheHead>
+          <Theline></Theline>
+        </Headline>
+        {subTech.map((obj, idx) => (
+          <SubModule key={idx}>
+            <Content>
+              <Label>{obj.category}</Label>
+              <Item>
+                {obj.tech.map((o, i) => (
+                  <Icon key={i} bg={o.bg}>
+                    {o.name}
+                  </Icon>
+                ))}
+              </Item>
+            </Content>
+          </SubModule>
+        ))}
+      </Module>
     );
   }
 }

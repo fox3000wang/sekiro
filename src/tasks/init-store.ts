@@ -1,29 +1,48 @@
+import {
+  configureStore,
+  getDefaultMiddleware,
+  createSerializableStateInvariantMiddleware
+} from "redux-starter-kit";
+import * as _ from "lodash";
 import thunk from "redux-thunk";
+import { AppActions } from "../action";
 import {
   applyMiddleware,
   createStore,
   combineReducers,
   compose,
-  bindActionCreators
+  bindActionCreators,
+  AnyAction,
+  Action
 } from "redux";
-import { routerReducer, routerMiddleware } from "react-router-redux";
 import { createBrowserHistory as createHistory } from "history";
 import reducers from "../reducer";
-import * as _ from "lodash";
-import { conbinedActions } from "../action";
+import { conbinedActions, mapAppActions } from "../action";
+import { Dispatch } from "react";
+import { routerMiddleware, routerReducer } from "react-router-redux";
 
-const ignoreAction = {
-  SEND_AOC_DATA: true,
-  "finish: SEND_AOC_DATA": true,
-  HANDLER_FOR: true,
-  SET_LEFT_TIME: true
+const ignoreAction = {};
+
+const catchErrorMiddleware = (store: any) => (next: Dispatch<AnyAction>) => (
+  action: Action
+) => {
+  try {
+    next(action);
+  } catch (e) {
+    setTimeout(() => {
+      // TODO:
+      // sendErrorLog("unhandled_action_error", ERROR_ACTION_ERROR, e, {
+      //   erroStack: e.stack
+      // });
+    });
+  }
 };
 
-export interface IDependency {
-  api: Api;
-  exp: AOCExperiment;
-  service: ServiceProxy;
-}
+// export interface IDependency {
+//   api: Api;
+//   exp: Experiment;
+//   service: ServiceProxy;
+// }
 
 export default (context: any) => {
   // use chrome extension
@@ -33,6 +52,28 @@ export default (context: any) => {
         actionsBlacklist: Object.keys(ignoreAction)
       })) ||
     compose;
+
+  const serializableMiddleware = createSerializableStateInvariantMiddleware({
+    isSerializable: val => {
+      return (
+        val === null ||
+        typeof val === "undefined" ||
+        typeof val === "string" ||
+        typeof val === "boolean" ||
+        typeof val === "number" ||
+        typeof val === "function" ||
+        typeof val === "object" ||
+        Array.isArray(val)
+      );
+    }
+  });
+
+  const starterKitDefaultMiddleware = getDefaultMiddleware();
+  starterKitDefaultMiddleware.length > 1
+    ? (starterKitDefaultMiddleware[
+        starterKitDefaultMiddleware.length - 1
+      ] = serializableMiddleware)
+    : null;
 
   // history
   const history = createHistory();
@@ -47,15 +88,11 @@ export default (context: any) => {
     composeEnhancers(applyMiddleware(...middlewares))
   );
 
-  const actions = _.mapValues(conbinedActions, action =>
-    bindActionCreators(action, store.dispatch)
+  const actions = _.mapValues(AppActions, action =>
+    bindActionCreators(action as any, store.dispatch)
   );
 
-  window.__AOC_STORE__ = store;
-
-  window.__GET_ROOM_SUMMARY__ = () => {
-    return getRoomSummary$(store.getState() as any);
-  };
+  window.__STORE__ = store;
 
   return Promise.resolve({ ...context, ...{ store, history, actions } });
 };

@@ -9,6 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const env =
   process.env.NODE_ENV === 'testing' ?
@@ -102,6 +103,11 @@ let webpackConfig = merge(baseWebpackConfig, {
         quality: '100',
       },
     }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename: 'BundleReport.html',
+      logLevel: 'info'
+    })
   ],
 });
 

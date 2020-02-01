@@ -1,16 +1,21 @@
 import "react-hot-loader/patch";
-
-import * as _ from "lodash";
 import { bindActionCreators, Dispatch } from "redux";
-import * as common from "./common";
+import * as _ from "lodash";
 
+import * as common from "./common";
+import * as vita from "./vita";
+
+/**
+ * 模块和模块直接分离各自的action
+ */
 const actionList = {
-  common: common
+  common: common,
+  vita: vita
 };
 
 export const mapAppActions = (dispatch: Dispatch) => ({
   actions: _.mapValues(actionList, action =>
-    bindActionCreators(action, dispatch)
+    bindActionCreators(action as any, dispatch)
   )
 });
 
@@ -20,3 +25,4 @@ export interface IAppActionProps {
   actions: ActionList;
 }
 export const conbinedActions = actionList;
+export const AppActions = actionList;
