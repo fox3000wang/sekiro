@@ -9,7 +9,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/language-typescript-blue.svg">
   <a href="https://travis-ci.org/fox3000wang/sekiro">
-    <img src="https://travis-ci.org/fox3000wang/sekiro.svg?branch=master">
+    <img src="https://travis-ci.org/fox3000wang/sekiro.svg?branch=beta">
   </a>
   <a href="https://codecov.io/gh/fox3000wang/sekiro">
     <img src="https://codecov.io/gh/fox3000wang/sekiro/branch/beta/graph/badge.svg" />
