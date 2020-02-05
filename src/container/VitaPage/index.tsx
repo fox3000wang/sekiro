@@ -36,6 +36,7 @@ import {
   Foot
 } from "./style";
 import { setVitaInfo } from "../../action/vita";
+import { getVisaInfo } from "../../services/api-service";
 
 function mapStateToProps(state: RootState) {
   const { vitaInfo } = state.appData;
@@ -109,10 +110,14 @@ class VitaPage extends React.Component<IAppActionProps, any> {
   }
 
   componentDidMount() {
+    getVisaInfo().then(response => {
+      console.log(response);
+
+      window.__STORE__.dispatch(
+        setVitaInfo({ info, work, project, education, tech, subTech })
+      );
+    });
     // 如果实在没办法，可以用这种邪道为state树赋值,作为view的组件，这行代码不应该出现在这里。
-    window.__STORE__.dispatch(
-      setVitaInfo({ info, work, project, education, tech, subTech })
-    );
   }
 
   render() {

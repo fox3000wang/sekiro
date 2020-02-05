@@ -1,9 +1,7 @@
 export function getVisaInfo() {
   return (body: any) => ({
-    method: "post",
-    //method: "get",
-    path: "graphql?query={data}",
-
+    method: "get",
+    path: "vita",
     name: "data",
     payload: body
   });
