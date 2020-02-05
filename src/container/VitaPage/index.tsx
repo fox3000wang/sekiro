@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 
 import { RootState } from "../../reducer";
 import { IAppActionProps, mapAppActions } from "../../action";
-import { info, work, project, education, tech, subTech } from "./data";
+// import { info, work, project, education, tech, subTech } from "./data";
+import * as data from "./data";
 import {
   Background,
   Layout,
@@ -110,13 +111,22 @@ class VitaPage extends React.Component<IAppActionProps, any> {
   }
 
   componentDidMount() {
-    getVisaInfo().then(response => {
-      console.log(response);
-
-      window.__STORE__.dispatch(
-        setVitaInfo({ info, work, project, education, tech, subTech })
-      );
-    });
+    const { tech, subTech } = data;
+    getVisaInfo()
+      .then(response => {
+        console.log(response);
+        const { info, work, project, education } = response.data;
+        window.__STORE__.dispatch(
+          setVitaInfo({ info, work, project, education, tech, subTech })
+        );
+      })
+      .catch(() => {
+        // 服务器忘记启动了就加载本地数据，不会翻车。
+        const { info, work, project, education } = data;
+        window.__STORE__.dispatch(
+          setVitaInfo({ info, work, project, education, tech, subTech })
+        );
+      });
     // 如果实在没办法，可以用这种邪道为state树赋值,作为view的组件，这行代码不应该出现在这里。
   }
 
@@ -203,7 +213,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderProject() {
+  renderProject(project) {
     return (
       <Module>
         <Headline>
@@ -226,7 +236,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderEducation() {
+  renderEducation(education) {
     return (
       <Module>
         <Headline>
@@ -247,7 +257,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderTech() {
+  renderTech(tech) {
     return (
       <Module>
         <Headline>
@@ -270,7 +280,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
     );
   }
 
-  renderSubTech() {
+  renderSubTech(subTech) {
     return (
       <Module>
         <Headline>
