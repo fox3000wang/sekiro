@@ -49,6 +49,22 @@ npm d
 npm build
 ```
 
+### client 端访问 server 端如果不做特殊处理会导致跨域的问题，解决的办法是用 Nginx 做个代理
+
+```
+  # 编辑nginx.conf配置文件
+  server{
+    listen 80;
+    server_name localhost;
+    location / {
+      proxy_pass http://localhost:8888;
+    }
+    location ^~/vita {
+      proxy_pass http://localhost:9999;
+    }
+  }
+```
+
 ## 项目背景
 
 从上一家公司离职，休息了半年，投简历的时候发现每家招聘网站的简历用起来都不爽，索性自己做一个。
