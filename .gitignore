@@ -22,11 +22,4 @@ yarn-error.log*
 
 *.js.map
 
-#package-lock.json
-
 package-lock.json
-
-package-lock.json
-
-
-dist/static/js/vendor.1668893c.js
