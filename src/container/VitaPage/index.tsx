@@ -127,7 +127,6 @@ class VitaPage extends React.Component<IAppActionProps, any> {
           setVitaInfo({ info, work, project, education, tech, subTech })
         );
       });
-    // 如果实在没办法，可以用这种邪道为state树赋值,作为view的组件，这行代码不应该出现在这里。
   }
 
   render() {
