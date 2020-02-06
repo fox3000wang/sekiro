@@ -49,7 +49,8 @@ function makeService(
 }
 
 const service: AxiosInstance = axios.create({
-  baseURL: "http://localhost/",
+  // baseURL: "http://localhost/",
+  baseURL: window.origin,
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
