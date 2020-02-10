@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import * as github from "../../assets/vita/github.png";
-import * as css3 from "../../assets/vita/css3.png";
 
 /**
  * flex 布局
@@ -19,10 +18,10 @@ export const BorderBg = styled.div`
 
 const Bg = styled.div`
   width: 2.2rem;
-  min-height: 1.5rem;
-  padding: 0.1rem;
-  margin: 0.1rem auto 0;
-  color: white;
+  min-height: 1rem;
+  padding: 0.05rem;
+  margin: 0.05rem auto 0;
+  /* color: white; */
   font: 100%/1.5 sans-serif;
 `;
 
@@ -83,6 +82,143 @@ export const BackgroundPositionCalc = styled(SvgBg)`
 export const HorizontalStripes = styled(Bg)`
   background: linear-gradient(#fb3 50%, #58a 0);
   background-size: 100% 30px;
+`;
+
+export const VerticalStripes = styled(Bg)`
+  background: linear-gradient(to right, #fb3 50%, #58a 0);
+  background-size: 30px 100%;
+`;
+
+export const DiagonalStripes = styled(Bg)`
+  background: linear-gradient(
+    45deg,
+    #fb3 25%,
+    #58a 0,
+    #58a 50%,
+    #fb3 0,
+    #fb3 75%,
+    #58a 0
+  );
+  background-size: 42.4px 42.4px;
+`;
+export const DiagonalStripes2 = styled(Bg)`
+  background: repeating-linear-gradient(
+    60deg,
+    #fb3,
+    #fb3 15px,
+    #58a 0,
+    #58a 30px
+  );
+`;
+
+export const SubtleStripes = styled(Bg)`
+  background: #58a;
+  background-image: repeating-linear-gradient(
+    30deg,
+    hsla(0, 0%, 100%, 0.1),
+    hsla(0, 0%, 100%, 0.1) 15px,
+    transparent 0,
+    transparent 0.3rem
+  );
+`;
+
+export const PseudorandomStripes = styled(Bg)`
+  background: hsl(20, 40%, 90%);
+  background-image: linear-gradient(90deg, #fb3 11px, transparent 0),
+    linear-gradient(90deg, #ab4 23px, transparent 0),
+    linear-gradient(90deg, #655 23px, transparent 0);
+  background-size: 83px 100%, 61px 100%, 41px 100%;
+`;
+
+export const BlueprintGrid = styled(Bg)`
+  background: #58a;
+  background-image: linear-gradient(white 2px, transparent 0),
+    linear-gradient(90deg, white 2px, transparent 0),
+    linear-gradient(hsla(0, 0%, 100%, 0.3) 1px, transparent 0),
+    linear-gradient(90deg, hsla(0, 0%, 100%, 0.3) 1px, transparent 0);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+`;
+
+export const PolkaDot = styled(Bg)`
+  background: #655;
+  background-image: radial-gradient(tan 20%, transparent 0),
+    radial-gradient(tan 20%, transparent 0);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+`;
+
+export const ConicGradients = styled(Bg)`
+  background: red;
+  background: conic-gradient(limegreen, green, limegreen);
+`;
+
+export const CheckerboardSVG = styled(Bg)`
+  background: #eee
+    url('data:image/svg+xml,\
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25" >\
+            <rect x="50" width="50" height="50" />\
+            <rect y="50" width="50" height="50" />\
+            </svg>');
+  background-size: 30px 30px;
+`;
+
+export const ContinuousImageBorders = styled(Bg)`
+  border: 1em solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    url(http://csssecrets.io/images/stone-art.jpg) border-box 0 / cover;
+
+  width: 21em;
+  padding: 1em;
+  overflow: hidden;
+  resize: both;
+  font: 100%/1.6 Baskerville, Palatino, serif;
+`;
+
+export const VintageEnvelopeBorder = styled(Bg)`
+  padding: 1em;
+  border: 1em solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    repeating-linear-gradient(
+        -45deg,
+        red 0,
+        red 12.5%,
+        transparent 0,
+        transparent 25%,
+        #58a 0,
+        #58a 37.5%,
+        transparent 0,
+        transparent 50%
+      )
+      0 / 6em 6em;
+
+  max-width: 20em;
+  font: 100%/1.6 Baskerville, Palatino, serif;
+`;
+
+export const MarchingAntsBorder = styled(Bg)`
+  padding: 1em;
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    repeating-linear-gradient(
+        -45deg,
+        black 0,
+        black 25%,
+        transparent 0,
+        transparent 50%
+      )
+      0 / 0.6em 0.6em;
+  animation: ants 12s linear infinite;
+
+  max-width: 20em;
+  font: 100%/1.6 Baskerville, Palatino, serif;
+`;
+
+export const FootnoteStyleBorder = styled(Bg)`
+  background: #fff;
+  border-top: 0.15em solid transparent;
+  border-image: 100% 0 0 linear-gradient(90deg, currentColor 4em, transparent 0);
+  padding-top: 0.5em;
+  font: 220%/1.4 Baskerville, Palatino, serif;
 `;
 
 /**************

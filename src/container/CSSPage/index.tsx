@@ -9,16 +9,9 @@ import {
   Font,
   List,
   Margin,
-  Padding,
-  BorderBg,
-  Border,
-  MultipleBorders,
-  MultipleBorders2,
-  BackgroundPosition,
-  BackgroundOrigin,
-  BackgroundPositionCalc,
-  HorizontalStripes
+  Padding
 } from "./style";
+import borderAndBackground from "./borderAndBackground";
 
 /**
  * 整理css读书笔记用
@@ -29,17 +22,7 @@ function CSSPage() {
       <Layout>
         <Head>css2 css3</Head>
         <Body>
-          <BorderBg>
-            <Border>半透明</Border>
-            <MultipleBorders>多重边框box-shadow</MultipleBorders>
-            <MultipleBorders2>多重边框outline</MultipleBorders2>
-            <BackgroundPosition>bacskground-position</BackgroundPosition>
-            <BackgroundOrigin>background-origin</BackgroundOrigin>
-            <BackgroundPositionCalc>
-              background-position-calc
-            </BackgroundPositionCalc>
-            <HorizontalStripes>条纹背景</HorizontalStripes>
-          </BorderBg>
+          {borderAndBackground()}
           <div>----------------------------------------------------</div>
           <Border2>border2</Border2>
           <Cursor>cursor</Cursor>
