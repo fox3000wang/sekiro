@@ -4,12 +4,20 @@ import {
   Layout,
   Head,
   Body,
-  Border,
+  Border2,
   Cursor,
   Font,
   List,
   Margin,
-  Padding
+  Padding,
+  BorderBg,
+  Border,
+  MultipleBorders,
+  MultipleBorders2,
+  BackgroundPosition,
+  BackgroundOrigin,
+  BackgroundPositionCalc,
+  HorizontalStripes
 } from "./style";
 
 /**
@@ -19,10 +27,21 @@ function CSSPage() {
   return (
     <Background>
       <Layout>
-        ok
-        <Head></Head>
+        <Head>css2 css3</Head>
         <Body>
-          <Border>border</Border>
+          <BorderBg>
+            <Border>半透明</Border>
+            <MultipleBorders>多重边框box-shadow</MultipleBorders>
+            <MultipleBorders2>多重边框outline</MultipleBorders2>
+            <BackgroundPosition>bacskground-position</BackgroundPosition>
+            <BackgroundOrigin>background-origin</BackgroundOrigin>
+            <BackgroundPositionCalc>
+              background-position-calc
+            </BackgroundPositionCalc>
+            <HorizontalStripes>条纹背景</HorizontalStripes>
+          </BorderBg>
+          <div>----------------------------------------------------</div>
+          <Border2>border2</Border2>
           <Cursor>cursor</Cursor>
           <Font>font</Font>
           <List>

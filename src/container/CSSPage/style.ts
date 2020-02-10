@@ -1,7 +1,91 @@
 import styled from "styled-components";
 import * as github from "../../assets/vita/github.png";
+import * as css3 from "../../assets/vita/css3.png";
 
 /**
+ * flex 布局
+ * display: flex;
+ *
+ *
+ */
+export const BorderBg = styled.div`
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-wrap: wrap;
+  background: url(${github}) center right/2% 2% repeat fixed;
+  padding: 0.05rem;
+`;
+
+const Bg = styled.div`
+  width: 2.2rem;
+  min-height: 1.5rem;
+  padding: 0.1rem;
+  margin: 0.1rem auto 0;
+  color: white;
+  font: 100%/1.5 sans-serif;
+`;
+
+/**
+ * background-clip
+ *
+ */
+export const Border = styled(Bg)`
+  border: 10px solid hsla(0, 0%, 100%, 0.5);
+  background: white 10% 10%;
+  background-clip: padding-box;
+  color: #000;
+`;
+
+/**
+ * box-shadow
+ *
+ * PS:通过outline属性实现的“边框”不会贴合元素的圆角，不过 这一行为在未来可能会发生变化
+ *
+ */
+export const MultipleBorders = styled(Bg)`
+  background: yellowgreen;
+  box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink,
+    0 2px 5px 15px rgba(0, 0, 0, 0.6);
+`;
+
+/**
+ * outline
+ *
+ */
+export const MultipleBorders2 = styled(Bg)`
+  background: yellowgreen;
+  border: 10px solid #655;
+  outline: 5px solid deeppink;
+`;
+
+const SvgBg = styled(Bg)`
+  background: url(http://csssecrets.io/images/code-pirate.svg) no-repeat bottom
+    right #58a;
+`;
+
+export const BackgroundPosition = styled(SvgBg)`
+  background-position: right 0.2rem bottom 0.1rem;
+`;
+
+export const BackgroundOrigin = styled(SvgBg)`
+  background-origin: content-box;
+`;
+
+export const BackgroundPositionCalc = styled(SvgBg)`
+  background-position: calc(100% - 20px) calc(100% - 10px);
+`;
+
+/**
+ * 条纹背景
+ * linear-gradient
+ * */
+export const HorizontalStripes = styled(Bg)`
+  background: linear-gradient(#fb3 50%, #58a 0);
+  background-size: 100% 30px;
+`;
+
+/**************
  * clear
  * clip
  * content
@@ -26,7 +110,7 @@ import * as github from "../../assets/vita/github.png";
  */
 export const Background = styled.div`
   /* background: rgba(30, 30, 30, 1) url(${github}) center center/50% 50% no-repeat fixed; */
-  background: #666 url(${github}) center center/50% 50% no-repeat fixed;
+  background: #666 url(${github}) center right/30% 30% no-repeat fixed;
   display: flex;
   justify-content: center;
   font-family: PingFangSC-Semibold;
@@ -48,6 +132,7 @@ export const Head = styled.div`
   height: 0.5rem;
   margin: 0;
   border-color: #fff;
+  margin-bottom: 0.05rem;
 `;
 
 export const Body = styled.div`
@@ -77,7 +162,7 @@ const Item = styled.div`
  * outset	定义 3D outset 边框。其效果取决于 border-color 的值。
  * inherit	规定应该从父元素继承边框样式。
  */
-export const Border = styled(Item)`
+export const Border2 = styled(Item)`
   border: 1px #fff solid;
   width: 5rem;
   height: 0.5rem;
@@ -209,6 +294,7 @@ export const Font = styled(Item)`
  */
 export const List = styled.div`
   list-style: circle url(${github});
+  left: 2rem;
 `;
 
 /**
