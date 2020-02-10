@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router";
 import { VITA, CSS } from "../consts/route-names";
 import VitaPage from "./VitaPage";
 import CSSPage from "./CSSPage";
+import ThePragmaticProgrammer from "./../note/ThePragmaticProgrammer";
 
 class App extends React.Component<any, any> {
   static displayName = "App";
@@ -16,8 +17,9 @@ class App extends React.Component<any, any> {
         }}
       >
         <Switch>
-          <Route path={CSS} component={CSSPage} />
-          <Route path={VITA} component={VitaPage} />
+          <Route path="/tpp" component={ThePragmaticProgrammer} />
+          <Route path="/css" component={CSSPage} />
+          <Route path="/" component={VitaPage} />
         </Switch>
       </div>
     );

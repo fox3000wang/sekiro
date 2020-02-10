@@ -18,8 +18,7 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production' ?
-      config.build.assetsPublicPath :
-      config.dev.assetsPublicPath,
+      config.build.assetsPublicPath : config.dev.assetsPublicPath,
     globalObject: 'this',
   },
   resolve: {
@@ -101,6 +100,10 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
         include: /node_modules/,
+      },
+      {
+        test: /\.md$/,
+        use: "raw-loader"
       },
     ],
   },
