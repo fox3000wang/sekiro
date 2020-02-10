@@ -6,8 +6,6 @@ import {
   QuarterEllipse3,
   QuarterEllipse4,
   Parallelograms,
-  DiamondImages,
-  DiamondImage,
   DiamondImagesViaClipPath,
   BeveledCorners,
   ScoopCorners,

@@ -44,24 +44,6 @@ export const Parallelograms = styled(Shape)`
   transform: skewX(-45deg);
 `;
 
-export const DiamondImages = styled.div`
-  width: 1rem;
-  height: 1rem;
-  transform: rotate(45deg);
-  overflow: hidden;
-  margin: 0.1rem;
-  border: 2px #000 solid;
-`;
-export const DiamondImage = styled.div`
-  background: url(${github}) 100% 100% no-repeat;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-45deg) scale(1.42);
-  /* transform: rotate(-45deg); */
-  z-index: -1;
-  position: relative;
-`;
-
 export const DiamondImagesViaClipPath = styled.div`
   background: url(${github}) 100% 100% no-repeat;
   width: 2rem;
@@ -130,8 +112,13 @@ export const BorderBg = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  background: url(${github}) center right/2% 2% repeat fixed;
   padding: 0.05rem;
+
+  background: hsl(20, 40%, 90%);
+  background-image: linear-gradient(90deg, #111 11px, transparent 0),
+    linear-gradient(90deg, #222 23px, transparent 0),
+    linear-gradient(90deg, #333 23px, transparent 0);
+  background-size: 83px 100%, 61px 100%, 41px 100%;
 `;
 
 const Bg = styled.div`
@@ -362,13 +349,14 @@ export const FootnoteStyleBorder = styled(Bg)`
  * inherit	规定应该从父元素继承 background-attachment 属性的设置。
  */
 export const Background = styled.div`
-  /* background: rgba(30, 30, 30, 1) url(${github}) center center/50% 50% no-repeat fixed; */
-  background: #666 url(${github}) center right/30% 30% no-repeat fixed;
+  background: rgba(30, 30, 30, 1);
+  /* background: #666 url(${github}) center right/30% 30% no-repeat fixed; */
   display: flex;
   justify-content: center;
   font-family: PingFangSC-Semibold;
   font-size: 0.18rem;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 `;

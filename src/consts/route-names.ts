@@ -1,2 +1,2 @@
 export const VITA = "/";
-export const CSS = "/CSS";
+export const CSS = "/css";
