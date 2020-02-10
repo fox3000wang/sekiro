@@ -1,15 +1,131 @@
 import styled from "styled-components";
 import * as github from "../../assets/vita/github.png";
 
+/******************************************************************************
+ * 形状
+ */
+export const ShapeBg = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff center right/2% 2% repeat fixed;
+  padding: 0.05rem;
+`;
+
+const Shape = styled.div`
+  display: inline-block;
+  width: 1.6rem;
+  height: 1rem;
+  border: 0;
+  margin: 0.1rem;
+  padding: 0.1rem;
+  background: #0a0;
+`;
+const Quarter = styled(Shape)`
+  background: #fb3;
+`;
+
+export const QuarterEllipse1 = styled(Quarter)`
+  border-radius: 100% 0 0 0;
+`;
+export const QuarterEllipse2 = styled(Quarter)`
+  border-radius: 0 100% 0 0;
+`;
+export const QuarterEllipse3 = styled(Quarter)`
+  border-radius: 0 0 100% 0;
+`;
+export const QuarterEllipse4 = styled(Quarter)`
+  border-radius: 0 0 0 100%;
+`;
+
+export const Parallelograms = styled(Shape)`
+  background: #58a;
+  font: bold 200%/1 sans-serif;
+  transform: skewX(-45deg);
+`;
+
+export const DiamondImages = styled.div`
+  width: 1rem;
+  height: 1rem;
+  transform: rotate(45deg);
+  overflow: hidden;
+  margin: 0.1rem;
+  border: 2px #000 solid;
+`;
+export const DiamondImage = styled.div`
+  background: url(${github}) 100% 100% no-repeat;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg) scale(1.42);
+  /* transform: rotate(-45deg); */
+  z-index: -1;
+  position: relative;
+`;
+
+export const DiamondImagesViaClipPath = styled.div`
+  background: url(${github}) 100% 100% no-repeat;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.2rem;
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  transition: 1s;
+`;
+
+export const BeveledCorners = styled.div`
+  background: #58a;
+  background: linear-gradient(135deg, transparent 15px, #58a 0) top left,
+    linear-gradient(-135deg, transparent 15px, #58a 0) top right,
+    linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,
+    linear-gradient(45deg, transparent 15px, #58a 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+
+  padding: 1em 1.2em;
+  max-width: 12em;
+  color: white;
+  font: 150%/1.6 Baskerville, Palatino, serif;
+`;
+
+export const ScoopCorners = styled.div`
+  background: #58a;
+  background: radial-gradient(circle at top left, transparent 15px, #58a 0) top
+      left,
+    radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+    radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom
+      right,
+    radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+
+  padding: 1em 1.2em;
+  max-width: 12em;
+  color: white;
+  font: 130%/1.6 Baskerville, Palatino, serif;
+`;
+
 /**
- * flex 布局
- * display: flex;
- *
- *
+ * 未实现
+ * http://dabblet.com/gist/66e1e52ac2a44ad87aa4
+ */
+export const Pie = styled.div`
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background: yellowgreen;
+  color: transparent;
+  text-align: center;
+  border-radius: 50%;
+  background-image: linear-gradient(to right, transparent 50%, #655 0);
+`;
+
+/******************************************************************************
+ * 背景与边框
  */
 export const BorderBg = styled.div`
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-wrap: wrap;
   background: url(${github}) center right/2% 2% repeat fixed;
@@ -21,7 +137,6 @@ const Bg = styled.div`
   min-height: 1rem;
   padding: 0.05rem;
   margin: 0.05rem auto 0;
-  /* color: white; */
   font: 100%/1.5 sans-serif;
 `;
 
@@ -221,7 +336,7 @@ export const FootnoteStyleBorder = styled(Bg)`
   font: 220%/1.4 Baskerville, Palatino, serif;
 `;
 
-/**************
+/******************************************************************************
  * clear
  * clip
  * content

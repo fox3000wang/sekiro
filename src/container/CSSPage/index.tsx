@@ -12,6 +12,7 @@ import {
   Padding
 } from "./style";
 import borderAndBackground from "./borderAndBackground";
+import shape from "./shape";
 
 /**
  * 整理css读书笔记用
@@ -22,6 +23,7 @@ function CSSPage() {
       <Layout>
         <Head>css2 css3</Head>
         <Body>
+          {shape()}
           {borderAndBackground()}
           <div>----------------------------------------------------</div>
           <Border2>border2</Border2>
