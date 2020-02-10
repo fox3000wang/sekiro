@@ -22,10 +22,7 @@ export default function shape() {
       <QuarterEllipse3></QuarterEllipse3>
       <QuarterEllipse4></QuarterEllipse4>
       <Parallelograms>平行四边形</Parallelograms>
-      <DiamondImages>
-        <DiamondImage>貌似翻车了！</DiamondImage>
-      </DiamondImages>
-      <DiamondImagesViaClipPath></DiamondImagesViaClipPath>
+      <DiamondImagesViaClipPath>菱形</DiamondImagesViaClipPath>
       <BeveledCorners>
         Hey, focus! You’re supposed to be looking at my corners, not reading my
         text. The text is just placeholder!
@@ -34,7 +31,7 @@ export default function shape() {
         Hey, focus! You’re supposed to be looking at my corners, not reading my
         text. The text is just placeholder!
       </ScoopCorners>
-      <Pie>20%</Pie>
+      <Pie></Pie>
     </ShapeBg>
   );
 }

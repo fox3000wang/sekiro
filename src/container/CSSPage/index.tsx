@@ -13,6 +13,7 @@ import {
 } from "./style";
 import borderAndBackground from "./borderAndBackground";
 import shape from "./shape";
+import animation from "./animation";
 
 /**
  * 整理css读书笔记用
@@ -23,6 +24,7 @@ function CSSPage() {
       <Layout>
         <Head>css2 css3</Head>
         <Body>
+          {animation()}
           {shape()}
           {borderAndBackground()}
           <div>----------------------------------------------------</div>

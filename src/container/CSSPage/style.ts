@@ -73,7 +73,6 @@ export const DiamondImagesViaClipPath = styled.div`
 `;
 
 export const BeveledCorners = styled.div`
-  background: #58a;
   background: linear-gradient(135deg, transparent 15px, #58a 0) top left,
     linear-gradient(-135deg, transparent 15px, #58a 0) top right,
     linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,
@@ -88,20 +87,23 @@ export const BeveledCorners = styled.div`
 `;
 
 export const ScoopCorners = styled.div`
-  background: #58a;
-  background: radial-gradient(circle at top left, transparent 15px, #58a 0) top
-      left,
-    radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
-    radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom
+  background: radial-gradient(circle at top left, transparent 0.2rem, #58a 0)
+      top left,
+    radial-gradient(circle at top right, transparent 0.2rem, #58a 0) top right,
+    radial-gradient(circle at bottom right, transparent 0.2rem, #58a 0) bottom
       right,
-    radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left;
+    radial-gradient(circle at bottom left, transparent 0.2rem, #58a 0) bottom
+      left;
   background-size: 50% 50%;
   background-repeat: no-repeat;
 
-  padding: 1em 1.2em;
-  max-width: 12em;
+  /* padding: 0.2rem 0.5rem; */
+  padding: 0.2rem;
+  max-width: 4.2rem;
   color: white;
-  font: 130%/1.6 Baskerville, Palatino, serif;
+  /* 改变 padding 和 font 都有可能会让图形中间出一条线。
+    在不同浏览器上表现还不一样。 切角的功能慎用啊！
+  /* font: 130%/1.6 Baskerville, Palatino, serif; */
 `;
 
 /**
