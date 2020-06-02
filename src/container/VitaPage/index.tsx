@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 import { RootState } from "../../reducer";
 import { IAppActionProps, mapAppActions } from "../../action";
-// import { info, work, project, education, tech, subTech } from "./data";
 import * as data from "./data";
 import {
   Background,
@@ -34,7 +33,7 @@ import {
   Icon,
   Photo,
   Github,
-  Foot
+  Foot,
 } from "./style";
 import { setVitaInfo } from "../../action/vita";
 import { getVisaInfo } from "../../services/api-service";
@@ -95,7 +94,7 @@ function renderOther() {
       <SubModule>
         <Content>
           <Label>托管</Label>
-          <Item>aws(wangzm.cn) 百度云(wangzm.top)</Item>
+          <Item>aws(wangzm.cn) </Item>
         </Content>
       </SubModule>
     </Module>
@@ -106,14 +105,14 @@ class VitaPage extends React.Component<IAppActionProps, any> {
   constructor(props: IAppActionProps) {
     super(props);
     this.state = {
-      isConfirmModalShow: false
+      isConfirmModalShow: false,
     };
   }
 
   componentDidMount() {
     const { tech, subTech } = data;
     getVisaInfo()
-      .then(response => {
+      .then((response) => {
         console.log(response);
         const { info, work, project, education } = response.data;
         window.__STORE__.dispatch(

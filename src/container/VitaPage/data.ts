@@ -27,15 +27,15 @@ export const info = {
     工作地点: `上海浦东`,
     工龄: `${new Date().getFullYear() - 2006}年`,
     政治面貌: `群众`,
-    兴趣:`阅读,旅游`,
-    运动:`马拉松`
+    兴趣: `阅读,旅游`,
+    运动: `马拉松`,
   },
   intention: {
     工作类型: `全职`,
     期望月薪: `15000+RMB/月`,
     期望职业: `H5前端研发`,
-    期望行业: `任意`
-  }
+    期望行业: `任意`,
+  },
 };
 
 export const work = [
@@ -43,14 +43,14 @@ export const work = [
     time: `2010年08月 - 2019年08月`,
     name: `上海钦文信息科技有限公司 (爱乐奇)`,
     position: `H5前端研发工程师`,
-    introduction: `本人于2010年08月入职担任软件工程师一职。主要负责公司的一系列少儿英语培训教学软件项目前端的研发工作，同时也公司内部工具项目开发，项目自动化集成，自动化运维，数据分析等工作。`
+    introduction: `本人于2010年08月入职担任软件工程师一职。主要负责公司的一系列少儿英语培训教学软件项目前端的研发工作，同时也公司内部工具项目开发，项目自动化集成，自动化运维，数据分析等工作。`,
   },
   {
     time: `2006年11月 - 2009年04月`,
     name: `上海立派信息科技有限公司`,
     position: `对日软件开发工程师`,
-    introduction: `主要负责是对日外包项目的开发和测试，项目的业务主要是物流方面的，用的主要技术是java和oracle。通过业余时间的学习，获得了《Oracle Certified Associate》证书`
-  }
+    introduction: `主要负责是对日外包项目的开发和测试，项目的业务主要是物流方面的，用的主要技术是java和oracle。通过业余时间的学习，获得了《Oracle Certified Associate》证书`,
+  },
 ];
 
 export const project = [
@@ -74,7 +74,7 @@ export const project = [
       `具体内容包括：\n` +
       `1.根据产品设计师提供的PRD和交互设计师提供的UI，开发并实现学生端，教师端相关页面开发，动画特效。 主要技术栈：electron，react，styled-components\n` +
       `2.根据运维要求，每两周一次功能迭代，自动化集成发布上线。主要技术栈：webpack, glup, gitlab-ci, jenkins, docker, shell。\n` +
-      `3.采集用户相关的数据和错误栈，管理和监控项目健康状况。 主要技术栈：kibana，elasticsearch, bi。`
+      `3.采集用户相关的数据和错误栈，管理和监控项目健康状况。 主要技术栈：kibana，elasticsearch, bi。`,
   },
   {
     time: `2015年04月 - 2017年01月`,
@@ -89,7 +89,7 @@ export const project = [
       `具体内容：\n` +
       `1. 前端部分UI功能。 主要技术栈：react css3\n` +
       `2. 内容端部分题型实现。主要技术栈：react css3\n` +
-      `3. 内容端的PPT播放器功能实现。 主要技术栈： keynote，js`
+      `3. 内容端的PPT播放器功能实现。 主要技术栈： keynote，js`,
   },
   {
     time: `2013年10月 - 2015年01月`,
@@ -98,11 +98,11 @@ export const project = [
       `职位名称：AS3前端工程师\n` +
       `主要技术栈：flash/as3/stage3D starling\n` +
       `项目简介：爱作业是爱乐奇英语配套的课后作业平台。项目使用跨平台技术，可以一套代码在ios端，安卓端，pc端运行。`,
-    duty: `负责相关题型开发`
+    duty: `负责相关题型开发`,
   },
   {
     time: `2010年08月 - 2013年12月`,
-    name: `爱乐奇虚拟世界`,
+    name: `爱乐奇虚拟世界(2020年5月31日下线)`,
     introduction:
       `职位名称：flash/as3工程师\n` +
       `主要技栈：flex actionscript3\n` +
@@ -113,52 +113,52 @@ export const project = [
       `具体内容包括：\n` +
       `1. 平台端：场景，个人信息、班级、会员管理，平台和app对接。主要技术：GC，寻路。\n` +
       `2. 内容端：部分游戏，题型。主要技术：骨骼动画（DragonBones）。\n` +
-      `3. 其他：性能优化，项目自动化集成，代码混淆，线上错误收集和排查。主要技术：jenkins，shell，python，ruby，mysql`
-  }
+      `3. 其他：性能优化，项目自动化集成，代码混淆，线上错误收集和排查。主要技术：jenkins，shell，python，ruby，mysql`,
+  },
 ];
 
 export const education = [
   {
     time: `1997年09月 - 2000年06月`,
-    name: `广西柳州市铁路第一中学`
+    name: `广西柳州市铁路第一中学`,
   },
   {
     time: `2000年09月 - 2004年06月`,
-    name: `中南大学 计算机科学与技术专业 本科 学士学位`
-  }
+    name: `中南大学 计算机科学与技术专业(全日制，学历可查) 本科 学士学位`,
+  },
 ];
 
 export const tech = [
   {
     bg: es6,
     name: `es6`,
-    width: 90
-  },
-  {
-    bg: webpack,
-    name: `webpack`,
-    width: 80
+    width: 90,
   },
   {
     bg: react,
     name: `react`,
-    width: 80
+    width: 90,
   },
   {
     bg: redux,
     name: `redux`,
-    width: 75
+    width: 75,
   },
   {
     bg: css3,
     name: `css3`,
-    width: 75
+    width: 75,
+  },
+  {
+    bg: webpack,
+    name: `webpack`,
+    width: 80,
   },
   {
     bg: styled,
     name: `styled-components`,
-    width: 85
-  }
+    width: 85,
+  },
 ];
 
 export const subTech = [
@@ -167,63 +167,63 @@ export const subTech = [
     tech: [
       {
         bg: npm,
-        name: `npm`
+        name: `npm`,
       },
       {
         bg: gitlabci,
-        name: `gitlab-ci`
+        name: `gitlab-ci`,
       },
       {
         bg: jenkins,
-        name: `jenkins `
-      }
-    ]
+        name: `jenkins `,
+      },
+    ],
   },
   {
     category: `服务器`,
     tech: [
       {
         bg: ubuntu,
-        name: `ubuntu`
+        name: `ubuntu`,
       },
       {
         bg: shell,
-        name: `shell`
+        name: `shell`,
       },
       {
         bg: docker,
-        name: `docker`
+        name: `docker`,
       },
       {
         bg: aws,
-        name: `云服务器`
-      }
-    ]
+        name: `云服务器`,
+      },
+    ],
   },
   {
     category: `其他语言`,
     tech: [
       {
         bg: python,
-        name: `python`
+        name: `python`,
       },
       {
         bg: ts,
-        name: `TypeScript`
-      }
-    ]
+        name: `TypeScript`,
+      },
+    ],
   },
   {
     category: `其他技术`,
     tech: [
       {
         bg: git,
-        name: `git`
+        name: `git`,
       },
       {
         bg: mysql,
-        name: `mysql`
-      }
-    ]
-  }
+        name: `mysql`,
+      },
+    ],
+  },
 ];
