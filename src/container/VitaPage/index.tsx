@@ -111,7 +111,7 @@ class VitaPage extends React.Component<IAppActionProps, any> {
 
   componentDidMount() {
     const { tech, subTech } = data;
-    getVisaInfo()
+    getVisaInfo(null)
       .then((response) => {
         console.log(response);
         const { info, work, project, education } = response.data;
