@@ -28,6 +28,7 @@ vscode 需要安装相关插件
 ## 安装项目依赖
 
 ```
-npm install antd  --save
+npm install --save antd
+npm install --save redux
 
 ```
