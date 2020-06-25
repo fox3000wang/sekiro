@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <script>
+    function Dog(name) {
+      this.name = name;
+    }
+    Dog.prototype.bark = function () {
+      console.log('bark');
+    }
+    Dog.prototype.sayName = function () {
+      console.log(`my name is ${this.name}`)
+    }
+
+    let d = new Dog('汤姆');
+    d.sayName();
+
+    // ---------------------------------------
+    /* es5的实现 */
+    function _new5(Fn) {
+      // 没有es6的时候, 高级的解决方案。把类数组转换成数组
+      let args = Array.prototype.slice.call(arguments, 1);
+      let obj = {};
+      obj.__proto__ = Fn.prototype;
+      let res = Fn.apply(obj, args); // apply的应用
+
+      if (res && (typeof res === 'object' || typeof res === 'function')) {
+        return res;
+      }
+      return obj;
+    }
+
+    let tn5 = _new5(Dog, '托尼5');
+    tn5.sayName();
+    console.log(tn5 instanceof Dog); // => true
+
+    // ---------------------------------------
+    /* es6 */
+    function _new6(Fn, ...args) {
+      let obj = Object.create(Fn.prototype);
+      let res = Fn.call(obj, ...args);
+
+      if (res && (typeof res === 'object' || typeof res === 'function')) {
+        return res;
+      }
+      return obj;
+    }
+
+    let tn6 = _new6(Dog, '托尼6');
+    tn6.sayName();
+    console.log(tn6 instanceof Dog); // => true
+
+  </script>
+</body>
+
+</html>
