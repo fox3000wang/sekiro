@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <script>
+    function foo(x) {
+      let y = 200;
+      this.x = x;
+    }
+    let res = foo(100);
+    console.log(res);
+
+    res = new foo(100);
+    console(res);
+
+    /*
+      arguments = 100
+      x = 100
+      变量提升
+      设定this指向：window
+      ---------------------------------
+      私有变量 y = 200
+      this.x = 100 => window.x = 100
+      没有任何返回结果
+      ---------------------------------
+      new 是创建实例, new 谁，谁就是类, 返回当前类的实例
+
+      -------------v8--------------------
+      也会像普通函数执行，形成全新的上下文
+      argument = [100]
+      x = 100
+      ... 以下是普通函数执行没有的操作
+      v8底层默认会帮我们创建一个空对象(实例)
+      让它的_proto_指向fun.protptype => let obj = {}
+      V8底层会把上下文中的this指向这个对象  this->obj
+      ... 代码继续向下执行
+      私有变量 y = 200
+      this.x = x; => obj.x = 100 给创建的实例对象设置一个私有属性
+
+      -------------重点------------------
+      * v8发现函数没有写return, 
+      * 即使写了return的不是对象, 
+      * 都会帮我们把创建的实例对象返回
+      ---------------------------------
+
+      最后准备访问实例的私有属性x, 结果就报错了。
+
+    */
+
+  </script>
+</body>
+
+</html>

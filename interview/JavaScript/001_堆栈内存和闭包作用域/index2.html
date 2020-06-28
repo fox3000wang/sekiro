@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <script>
+    let a = {},
+      b = Symbol('1'), // 因为 if(Symbol('1') === Symbol('1')) 结果是false
+      c = Symbol('1');
+    a[b] = "foo";
+    a[c] = "bar"; // 最终，a里面存了两个Symbol('1')
+    console.log(a[b]);
+
+  </script>
+</body>
+
+</html>
