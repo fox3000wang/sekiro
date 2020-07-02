@@ -1,0 +1,31 @@
+1、Main nav
+Home News Product Contact
+
+2、Sidebar nav
+About Kodak
+Disruptive Technology
+Eastman Business Park
+
+3、Main content
+Kodak: Imaging Innovation for Business Kodak has transformed itself into a technology company focused on imaging for business. Today's Kodak provides:
+our business
+World-class R&D, based on Kodak's unique strengths in the materials, imaging and deposition sciences Breakthrough products enabling customers to achieve transformational improvements in quality, productivity and sustainability A broad solution set across graphic communications, product goods packaging, functional printing enabling Software and professional services businesses use to redefine information flow and security
+The New Kodak
+Kodak has sharpened its focus to commercial markets as part of a two-year restructuring. The company streamlined a complex infrastructure, made large cost reductions and exited non-core businesses including the spin off of its Consumer Imaging and Document Imaging businesses that now operate as Kodak Alaris under new ownership.
+Today, Kodak is leaner, financially stronger and ready to grow poised to take advantage of the digital transition under way in packaging markets; the growing demand for graphic communications around the world, especially in emerging markets; and dynamic growth in the market for printed electronics, sensors, fuel cells and other printed products with functions beyond visual communications.
+Building on a Technology Heritage
+
+Though Kodak has mostly been known for its historic role in photography, the company has served imaging needs of numerous industries since the early 1900s. Kodak's current portfolio is based on deep technological expertise developed over the years in materials science, deposition (e.g., precisely depositing thin coatings onto substrates or backings), and digital imaging science.
+
+Using this expertise, the company that delivered the first roll film, the first electronic color separation scanner to prepare images for printing, the first cameras to go to the moon, and the first digital camera, is now delivering leading solutions for today's business customers. These include:
+Digital presses that can print a 260-page novel in 2.25 seconds
+Flexographic systems that make packaging more vibrant and eye-catching for shoppers
+Continuous manufacturing processes to mass-produce touch screen sensors
+Devices that image more than 30% of digital plates used for offset printing worldwide
+Printing plates that reduce environmental impact by eliminating use of chemistry and processing
+And many more...
+Kodak also has more than 7,500 commercial imaging patents and patent applications a depth of intellectual property that enables partnerships with other innovators to create new markets, and disrupt existing markets with new solutions.
+
+4、Footer Nav
+About KodakPrivacySite TermsNews Contact Us
+
